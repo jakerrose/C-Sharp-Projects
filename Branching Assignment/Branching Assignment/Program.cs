@@ -36,11 +36,6 @@ namespace Branching_Assignment
             else if (total <=50)
             { Console.WriteLine("Your estimated shipping is $" + dimensions * pounds / 100 + ".00."); }
             Console.ReadLine();
-
-
-
-
-
         }
     }
 }
