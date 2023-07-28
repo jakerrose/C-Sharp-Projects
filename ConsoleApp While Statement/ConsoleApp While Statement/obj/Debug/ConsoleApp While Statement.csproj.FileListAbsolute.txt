@@ -1,0 +1,7 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp While Statement\ConsoleApp While Statement\obj\Debug\ConsoleApp While Statement.csproj.AssemblyReference.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp While Statement\ConsoleApp While Statement\obj\Debug\ConsoleApp While Statement.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp While Statement\ConsoleApp While Statement\bin\Debug\ConsoleApp While Statement.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp While Statement\ConsoleApp While Statement\bin\Debug\ConsoleApp While Statement.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp While Statement\ConsoleApp While Statement\bin\Debug\ConsoleApp While Statement.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp While Statement\ConsoleApp While Statement\obj\Debug\ConsoleApp While Statement.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp While Statement\ConsoleApp While Statement\obj\Debug\ConsoleApp While Statement.pdb

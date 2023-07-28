@@ -1,0 +1,6 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp Do While Statement\ConsoleApp Do While Statement\obj\Debug\ConsoleApp Do While Statement.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp Do While Statement\ConsoleApp Do While Statement\bin\Debug\ConsoleApp Do While Statement.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp Do While Statement\ConsoleApp Do While Statement\bin\Debug\ConsoleApp Do While Statement.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp Do While Statement\ConsoleApp Do While Statement\bin\Debug\ConsoleApp Do While Statement.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp Do While Statement\ConsoleApp Do While Statement\obj\Debug\ConsoleApp Do While Statement.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\ConsoleApp Do While Statement\ConsoleApp Do While Statement\obj\Debug\ConsoleApp Do While Statement.pdb
