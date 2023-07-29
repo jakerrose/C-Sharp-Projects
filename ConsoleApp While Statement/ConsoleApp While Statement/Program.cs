@@ -33,7 +33,7 @@ namespace ConsoleApp_While_Statement
                         break;
                     case "Rumpelstiltskin":
                         Console.Write("You guessed my name! You win!");
-                        nameGuess = Console.ReadLine();
+                        rightGuess = true;
                         break;
                 }
             }
