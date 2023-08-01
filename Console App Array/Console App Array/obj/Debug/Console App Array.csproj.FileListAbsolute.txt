@@ -1,0 +1,6 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Array\Console App Array\obj\Debug\Console App Array.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Array\Console App Array\bin\Debug\Console App Array.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Array\Console App Array\bin\Debug\Console App Array.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Array\Console App Array\bin\Debug\Console App Array.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Array\Console App Array\obj\Debug\Console App Array.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Array\Console App Array\obj\Debug\Console App Array.pdb
