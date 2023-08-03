@@ -1,0 +1,7 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\App Strings and Integers\App Strings and Integers\bin\Debug\App Strings and Integers.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\App Strings and Integers\App Strings and Integers\bin\Debug\App Strings and Integers.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\App Strings and Integers\App Strings and Integers\bin\Debug\App Strings and Integers.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\App Strings and Integers\App Strings and Integers\obj\Debug\App Strings and Integers.csproj.AssemblyReference.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\App Strings and Integers\App Strings and Integers\obj\Debug\App Strings and Integers.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\App Strings and Integers\App Strings and Integers\obj\Debug\App Strings and Integers.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\App Strings and Integers\App Strings and Integers\obj\Debug\App Strings and Integers.pdb
