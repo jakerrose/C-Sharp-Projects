@@ -62,90 +62,55 @@ namespace Console_App_Part_1
 
             //Creates new list of stuff
             List<String> randomStuff = new List<string>() { "hamburger", "socks", "toys", "records", "games" };
-                //asks user to enter term to search for. Bool datatype is created to determine if item in list equals search item
-                Console.WriteLine("Would you like to search our list off stuff to see if we have what you want? Type a search term.");
-                string userTerm = Console.ReadLine();
-                bool rightGuess = randomStuff.Contains(userTerm);
-            //Do while loop to handle user searchs. If the item matches, the bool is true and message prints. If item does not match, it will switch to the default and the program will loop
-            do
+            //Creates bool data type to determine when correct word is found
+            bool found = false;
+            //Prints question for user input
+            Console.WriteLine("Would you like to search our list off stuff to see if we have what you want? Type a search term.");
+            //creates string variable using user input
+            string userTerm = Console.ReadLine();
+            //uses for loop, goes through each index item to see if userTerm matches
+            for (int i = 0; i < randomStuff.Count; i++)
             {
-                switch (userTerm)
+                //if statement, if userTerm matches item, it will write the name of the string and index number
+                if (userTerm == randomStuff[i])
                 {
-                    case "hamburger":
-                        Console.WriteLine("Yes we have hamburger! Please press enter to continue.");
-                        rightGuess = true;
-                        break;
-
-                    case "socks":
-                        Console.WriteLine("Yes we have socks! Please press enter to continue.");
-                        rightGuess = true;
-                        break;
-
-                    case "toys":
-                        Console.WriteLine("Yes we have toys! Please press enter to continue.");
-                        rightGuess = true;
-                        break;
-
-                    case "records":
-                        Console.WriteLine("Yes we have records! Please press enter to continue.");
-                        rightGuess = true;
-                        break;
-
-                    case "games":
-                        Console.WriteLine("Yes we have games! Please press enter to continue.");
-                        rightGuess = true;
-                        break;
-
-                    default:
-                        Console.WriteLine("Sorry, we don't have " + userTerm + ".");
-                        Console.WriteLine("Please trying searching for another term.");
-                        userTerm = Console.ReadLine();
-                        break;
+                    Console.WriteLine("Yes we have {0} at index {1}", userTerm, i);
+                    //if bool found is true, breaks out of loop
+                    found = true;
+                    break;
                 }
+
             }
-            while (!rightGuess);
+            //if item is not found, will print message
+            if (!found)
+            {
+                Console.WriteLine("Sorry, we don't have " + userTerm + ".");
+            }
             Console.ReadLine();
 
-            //Creates list of food. Asks user to search for matching food item.  Bool datatype is created to determine if item in list equals search item
-            List<String> foodList = new List<string>() { "apple", "gardenburger", "fish", "steak", "apple" };
-
-            Console.WriteLine("Type a search term and hit enter to see if we have the food you want.");
-            string userFood = Console.ReadLine();
-            bool rightFood = foodList.Contains(userFood);
-
-            //Do while loop to see if user term matches item in list. The index number of the list item will also print
-            do
+            //Creates new list
+            List<String> randomStuff2 = new List<string>() { "hamburger", "socks", "toys", "records", "games", "hamburger" };
+            //Creates bool data type to determine when correct word is found
+            bool find = false;
+            //Prints question for user input
+            Console.WriteLine("Would you like to search our list off stuff to see if we have what you want? Type a search term.");
+            //creates string variable using user input
+            string userWord = Console.ReadLine();
+            //uses for loop, goes through each index item to see if userTerm matches
+            for (int i = 0; i < randomStuff2.Count; i++)
             {
-                switch (userFood)
-                    {
-                    case "apple":
-                        Console.WriteLine("Yes we have apple! " + "It is in index number " + foodList.IndexOf("apple") + ". Please press enter to continue.");
-                    rightFood= true;
-                    break;
-
-                    case "gardenburger":
-                        Console.WriteLine("Yes we have gardenburger! " + "It is in index number " + foodList.IndexOf("gardenburger") + ". Please press enter to continue.");
-                        rightFood = true;
-                        break;
-
-                    case "fish":
-                        Console.WriteLine("Yes we have fish! " + "It is in index number " + foodList.IndexOf("fish") + ". Please press enter to continue.");
-                        rightFood = true;
-                        break;
-
-                    case "steak":
-                        Console.WriteLine("Yes we have steak! " + "It is in index number " + foodList.IndexOf("steak") + ". Please press enter to continue.");
-                        rightFood = true;
-                        break;
-
-                    default:
-                        Console.WriteLine("Sorry, we don't have " + userFood + ". Please press enter to continue.");
-                        Console.WriteLine("Please search for another food.");
-                        userFood = Console.ReadLine();
-                        break;
+                //if statement, if userTerm matches item, it will write the name of the string and index number
+                if (userWord == randomStuff2[i])
+                {
+                    Console.WriteLine("Yes we have {0} at index {1}", userWord, i);
+                    find = true;
                 }
             }
-            while (!rightFood);
+            //if item is not found, will print message
+            if (!find)
+            {
+                Console.WriteLine("Sorry, we don't have " + userWord + ".");
+            }
             Console.ReadLine();
 
             //New string list of car names that contains a duplicate entry. Another list distinct is created as an empty list to populate with distinict entries
