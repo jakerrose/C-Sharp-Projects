@@ -1,0 +1,7 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Part 1\Console App Part 1\bin\Debug\Console App Part 1.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Part 1\Console App Part 1\bin\Debug\Console App Part 1.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Part 1\Console App Part 1\bin\Debug\Console App Part 1.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Part 1\Console App Part 1\obj\Debug\Console App Part 1.csproj.AssemblyReference.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Part 1\Console App Part 1\obj\Debug\Console App Part 1.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Part 1\Console App Part 1\obj\Debug\Console App Part 1.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Console App Part 1\Console App Part 1\obj\Debug\Console App Part 1.pdb
