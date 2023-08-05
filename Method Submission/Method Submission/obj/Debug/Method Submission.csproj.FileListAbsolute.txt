@@ -1,0 +1,7 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Submission\Method Submission\bin\Debug\Method Submission.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Submission\Method Submission\bin\Debug\Method Submission.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Submission\Method Submission\bin\Debug\Method Submission.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Submission\Method Submission\obj\Debug\Method Submission.csproj.AssemblyReference.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Submission\Method Submission\obj\Debug\Method Submission.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Submission\Method Submission\obj\Debug\Method Submission.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Submission\Method Submission\obj\Debug\Method Submission.pdb
