@@ -1,0 +1,6 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Class\Method Class\obj\Debug\Method Class.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Class\Method Class\bin\Debug\Method Class.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Class\Method Class\bin\Debug\Method Class.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Class\Method Class\bin\Debug\Method Class.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Class\Method Class\obj\Debug\Method Class.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Method Class\Method Class\obj\Debug\Method Class.pdb
