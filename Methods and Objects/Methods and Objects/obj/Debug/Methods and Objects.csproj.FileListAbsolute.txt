@@ -1,0 +1,7 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Methods and Objects\Methods and Objects\obj\Debug\Methods and Objects.csproj.AssemblyReference.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Methods and Objects\Methods and Objects\obj\Debug\Methods and Objects.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Methods and Objects\Methods and Objects\bin\Debug\Methods and Objects.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Methods and Objects\Methods and Objects\bin\Debug\Methods and Objects.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Methods and Objects\Methods and Objects\bin\Debug\Methods and Objects.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Methods and Objects\Methods and Objects\obj\Debug\Methods and Objects.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Methods and Objects\Methods and Objects\obj\Debug\Methods and Objects.pdb
