@@ -22,15 +22,22 @@ namespace Method_Submission
             //takes user input and coverts to int data type, creates var userNum1
             int userNum1 = Convert.ToInt32(Console.ReadLine());
             //asks user for second number
-            Console.WriteLine("Please enter in a second number and press enter.");
-            //takes second number, converts to int data type, creates another var userNum2
-            int userNum2 = Convert.ToInt32(Console.ReadLine());
-            //runs userNum2 through method, prints the new var a
-            int a = Math3.Math(userNum2);
-            Console.WriteLine(a);
-            //runs userNum1 through method, prints new var c
-            int c = Math3.Math(userNum1);
-            Console.WriteLine(c);
+            Console.WriteLine("Please enter in a second number if you like and press enter.");
+            
+            
+            //trys if user inputs second argument
+            try
+            {   //takes second number, converts to int data type, creates another var userNum2
+                int userNum2 = Convert.ToInt32(Console.ReadLine());
+                int z = Math3.Math(userNum1, userNum2);
+                Console.WriteLine(z);
+            }
+            //if only one argument is present, will run through catch. Second user input will become default value
+            catch
+            {
+               int y= Math3.Math(userNum1);
+                Console.WriteLine(y);
+            }
 
             Console.ReadLine();
         }

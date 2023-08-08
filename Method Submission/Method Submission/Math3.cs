@@ -10,7 +10,7 @@ namespace Method_Submission
     public class Math3
     {
         //creates method Math with two parameters, one optional
-        public static int Math(int a, int b=20)
+        public static int Math(int a, int b = 20)
         {
             //code to use inside method
             int solution = (a * 42 + b);
