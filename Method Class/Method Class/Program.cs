@@ -17,6 +17,10 @@ namespace Method_Class
             Math4.Method(50, 20);
             Console.ReadLine();
 
+            //calls parameters to method, specifying them by name
+            Math4.Method(a: 12, b: 2);
+            Console.ReadLine();
+
         }
     }
 }

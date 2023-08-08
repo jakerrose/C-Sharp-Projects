@@ -9,7 +9,7 @@ namespace Method_Class
     //creates public class Math4
     public class Math4
     {
-        //creates void method Methos with two paramaters
+        //creates void method Method with two paramaters
         public static void Method(int a, int b)
         { 
             //prints message using paramater int a
@@ -17,6 +17,6 @@ namespace Method_Class
             //prints int b to screen
             Console.WriteLine("Integer b is " + b);
         }
-
+       
     }
 }
