@@ -10,8 +10,8 @@ namespace Polymorphism
     {
         static void Main(string[] args)
         {
-            //instatiates Employee, creates new variable employees
-            Employee employees = new Employee();
+            //instatiates IQuittable, creates new variable employees
+            IQuittable employees = new Employee();
             //calls Quit() method from class Employee
             employees.Quit();
             Console.ReadLine();
