@@ -1,0 +1,7 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Parameters\Parameters\obj\Debug\Parameters.csproj.AssemblyReference.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Parameters\Parameters\obj\Debug\Parameters.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Parameters\Parameters\bin\Debug\Parameters.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Parameters\Parameters\bin\Debug\Parameters.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Parameters\Parameters\bin\Debug\Parameters.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Parameters\Parameters\obj\Debug\Parameters.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Parameters\Parameters\obj\Debug\Parameters.pdb
