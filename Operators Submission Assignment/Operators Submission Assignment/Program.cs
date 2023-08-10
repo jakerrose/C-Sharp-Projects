@@ -18,11 +18,9 @@ namespace Operators_Submission_Assignment
             Employee employee2 = new Employee() { ID = 301 };
             employee2.printID();
 
-            //if else statement using overloading the operator to check if values are equal
-            if (employee1.ID == employee2.ID)
-                Console.WriteLine("The employee IDs are identical.");
-            else
-                Console.WriteLine("The employee IDs are unique.");
+            //uses bool operator, writes true or false for the two comparisons
+            Console.WriteLine(employee1 == employee2);
+            Console.WriteLine(employee1 != employee2);
             Console.ReadLine();
         }
     }

@@ -4,3 +4,4 @@ C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Operators Submission A
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Operators Submission Assignment\Operators Submission Assignment\bin\Debug\Operators Submission Assignment.pdb
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Operators Submission Assignment\Operators Submission Assignment\obj\Debug\Operators Submission Assignment.exe
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Operators Submission Assignment\Operators Submission Assignment\obj\Debug\Operators Submission Assignment.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Operators Submission Assignment\Operators Submission Assignment\obj\Debug\Operators Submission Assignment.csproj.AssemblyReference.cache

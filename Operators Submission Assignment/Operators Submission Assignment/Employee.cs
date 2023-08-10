@@ -19,5 +19,18 @@ namespace Operators_Submission_Assignment
         {
             Console.WriteLine("ID number is: " + ID);
         }
+
+        //creates bool operator == with two variables of Employee
+        public static bool operator ==(Employee E1, Employee E2)
+        {
+            //returns true or false for the comparison
+            return E1.ID == E2.ID;
+        }
+        //creates bool operator != with two variables of Employee
+        public static bool operator !=(Employee E1, Employee E2)
+        {
+            //returns true or false for the comparison
+            return E1.ID != E2.ID;
+        }
     }
 }
