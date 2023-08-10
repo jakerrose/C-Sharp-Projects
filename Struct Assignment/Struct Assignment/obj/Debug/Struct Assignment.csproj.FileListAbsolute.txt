@@ -1,0 +1,7 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Struct Assignment\Struct Assignment\obj\Debug\Struct Assignment.csproj.AssemblyReference.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Struct Assignment\Struct Assignment\obj\Debug\Struct Assignment.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Struct Assignment\Struct Assignment\bin\Debug\Struct Assignment.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Struct Assignment\Struct Assignment\bin\Debug\Struct Assignment.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Struct Assignment\Struct Assignment\bin\Debug\Struct Assignment.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Struct Assignment\Struct Assignment\obj\Debug\Struct Assignment.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Struct Assignment\Struct Assignment\obj\Debug\Struct Assignment.pdb
