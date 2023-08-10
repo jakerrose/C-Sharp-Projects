@@ -13,8 +13,10 @@ namespace Abstract_Class
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        //creates new void method SayName()
+        
+        //creates abstract method with no body
         public abstract void SayName();
+        //creates regular method
             public void method()
         {
             //will write name  when method is called
