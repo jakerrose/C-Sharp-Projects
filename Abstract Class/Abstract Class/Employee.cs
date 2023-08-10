@@ -9,5 +9,10 @@ namespace Abstract_Class
     //creates new class Employee. Inherits from Person class
     public class Employee : Person
     {
+        public override void SayName()
+       
+        {
+            Console.WriteLine("Name: " + FirstName + "" + LastName);
+        }
     }
 }

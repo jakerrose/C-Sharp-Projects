@@ -14,7 +14,8 @@ namespace Abstract_Class
         public string LastName { get; set; }
 
         //creates new void method SayName()
-        public void SayName()
+        public abstract void SayName();
+            public void method()
         {
             //will write name  when method is called
             Console.WriteLine("Name: " + FirstName + "" + LastName);

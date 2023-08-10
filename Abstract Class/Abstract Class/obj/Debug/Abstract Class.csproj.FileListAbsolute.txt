@@ -4,3 +4,4 @@ C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Abstract Class\Abstrac
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Abstract Class\Abstract Class\obj\Debug\Abstract Class.csproj.CoreCompileInputs.cache
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Abstract Class\Abstract Class\obj\Debug\Abstract Class.exe
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Abstract Class\Abstract Class\obj\Debug\Abstract Class.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Abstract Class\Abstract Class\obj\Debug\Abstract Class.csproj.AssemblyReference.cache
