@@ -1,0 +1,7 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Lamda Submission\Lamda Submission\bin\Debug\Lamda Submission.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Lamda Submission\Lamda Submission\bin\Debug\Lamda Submission.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Lamda Submission\Lamda Submission\bin\Debug\Lamda Submission.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Lamda Submission\Lamda Submission\obj\Debug\Lamda Submission.csproj.AssemblyReference.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Lamda Submission\Lamda Submission\obj\Debug\Lamda Submission.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Lamda Submission\Lamda Submission\obj\Debug\Lamda Submission.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Lamda Submission\Lamda Submission\obj\Debug\Lamda Submission.pdb
