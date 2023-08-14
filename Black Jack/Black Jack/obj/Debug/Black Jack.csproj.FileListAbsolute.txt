@@ -1,7 +1,0 @@
-C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Black Jack\Black Jack\bin\Debug\Black Jack.exe.config
-C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Black Jack\Black Jack\bin\Debug\Black Jack.exe
-C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Black Jack\Black Jack\bin\Debug\Black Jack.pdb
-C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Black Jack\Black Jack\obj\Debug\Black Jack.csproj.AssemblyReference.cache
-C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Black Jack\Black Jack\obj\Debug\Black Jack.csproj.CoreCompileInputs.cache
-C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Black Jack\Black Jack\obj\Debug\Black Jack.exe
-C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Black Jack\Black Jack\obj\Debug\Black Jack.pdb
