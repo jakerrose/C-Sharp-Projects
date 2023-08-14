@@ -1,0 +1,6 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Date Time submission\Date Time submission\bin\Debug\Date Time submission.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Date Time submission\Date Time submission\bin\Debug\Date Time submission.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Date Time submission\Date Time submission\bin\Debug\Date Time submission.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Date Time submission\Date Time submission\obj\Debug\Date Time submission.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Date Time submission\Date Time submission\obj\Debug\Date Time submission.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Date Time submission\Date Time submission\obj\Debug\Date Time submission.pdb
