@@ -1,0 +1,7 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Constructor Submission Assignment\Constructor Submission Assignment\obj\Debug\Constructor Submission Assignment.csproj.AssemblyReference.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Constructor Submission Assignment\Constructor Submission Assignment\obj\Debug\Constructor Submission Assignment.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Constructor Submission Assignment\Constructor Submission Assignment\bin\Debug\Constructor Submission Assignment.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Constructor Submission Assignment\Constructor Submission Assignment\bin\Debug\Constructor Submission Assignment.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Constructor Submission Assignment\Constructor Submission Assignment\bin\Debug\Constructor Submission Assignment.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Constructor Submission Assignment\Constructor Submission Assignment\obj\Debug\Constructor Submission Assignment.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Constructor Submission Assignment\Constructor Submission Assignment\obj\Debug\Constructor Submission Assignment.pdb
