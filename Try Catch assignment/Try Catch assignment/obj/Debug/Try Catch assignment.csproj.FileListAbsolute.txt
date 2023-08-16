@@ -1,0 +1,6 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Try Catch assignment\Try Catch assignment\bin\Debug\Try Catch assignment.exe.config
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Try Catch assignment\Try Catch assignment\bin\Debug\Try Catch assignment.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Try Catch assignment\Try Catch assignment\bin\Debug\Try Catch assignment.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Try Catch assignment\Try Catch assignment\obj\Debug\Try Catch assignment.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Try Catch assignment\Try Catch assignment\obj\Debug\Try Catch assignment.exe
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Try Catch assignment\Try Catch assignment\obj\Debug\Try Catch assignment.pdb
