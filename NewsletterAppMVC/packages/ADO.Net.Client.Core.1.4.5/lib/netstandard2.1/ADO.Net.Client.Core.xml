@@ -1,0 +1,1956 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ADO.Net.Client.Core</name>
+    </assembly>
+    <members>
+        <member name="T:ADO.Net.Client.Core.DataMapper">
+            <summary>
+            Mapper class that maps fields in a record in a database to a .NET object
+            </summary>
+            <seealso cref="T:ADO.Net.Client.Core.IDataMapper" />
+        </member>
+        <member name="P:ADO.Net.Client.Core.DataMapper.MatchUnderscoreNames">
+            <summary>
+            <c>true</c> if columns named like User_ID should be mapped to property called UserID, <c>false</c> otherwise
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DataMapper.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of <see cref="T:ADO.Net.Client.Core.DataMapper"/>
+            </summary>
+            <param name="matchUnderscoreNames"><c>true</c> if columns named like User_ID should be mapped to property called UserID, <c>false</c> otherwise</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DataMapper.MapResultSetStreamAsync``1(System.Data.Common.DbDataReader,System.Threading.CancellationToken)">
+            <summary>
+            Maps the result set one at a time by streaming the result from the server asynchronously
+            </summary>
+            <param name="token">Structure that propagates a notification that an operation should be cancelled</param>
+            <typeparam name="T">The <see cref="T:System.Type"/> the caller wants created from the passed in <paramref name="reader"/></typeparam>
+            <param name="reader">An instance of <see cref="T:System.Data.Common.DbDataReader"/> that contains a result set of records that needs to be mapped</param>
+            <returns>Returns the instance of <typeparamref name="T"/> created from the passed in <paramref name="reader"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DataMapper.MapResultSetAsync``1(System.Data.Common.DbDataReader,System.Threading.CancellationToken)">
+            <summary>
+            Maps an entire result set in the <paramref name="reader"/>
+            </summary>
+            <param name="token">Structure that propagates a notification that an operation should be cancelled</param>
+            <typeparam name="T">The <see cref="T:System.Type"/> the caller wants created from the passed in <paramref name="reader"/></typeparam>
+            <param name="reader">An instance of <see cref="T:System.Data.Common.DbDataReader"/> that contains a result set of records that needs to be mapped</param>
+            <returns>Returns the instance of <typeparamref name="T"/> created from the passed in <paramref name="reader"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DataMapper.MapResultSetStream``1(System.Data.Common.DbDataReader)">
+            <summary>
+            Maps the result set one at a time by streaming the result from the server
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> the caller wants created from the passed in <paramref name="reader"/></typeparam>
+            <param name="reader">An instance of <see cref="T:System.Data.Common.DbDataReader"/> that contains a result set of records that needs to be mapped</param>
+            <returns>Returns the instance of <typeparamref name="T"/> created from the passed in <paramref name="reader"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DataMapper.MapResultSet``1(System.Data.Common.DbDataReader)">
+            <summary>
+            Maps an entire result set in the <paramref name="reader"/>
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> the caller wants created from the passed in <paramref name="reader"/></typeparam>
+            <param name="reader">An instance of <see cref="T:System.Data.Common.DbDataReader"/> that contains a result set of records that needs to be mapped</param>
+            <returns>Returns the instance of <typeparamref name="T"/> created from the passed in <paramref name="reader"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DataMapper.MapRecord``1(System.Data.IDataRecord)">
+            <summary>
+            Maps the passed in <paramref name="record"/> to an instance of the <typeparamref name="T"/>
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> the caller wants created from the passed in <paramref name="record"/></typeparam>
+            <param name="record">An instance of <see cref="T:System.Data.IDataRecord"/> to read data from</param>
+            <returns>Returns the instance of <typeparamref name="T"/> created from the passed in <paramref name="record"/></returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.DbObjectFactory">
+            <summary>
+            A class that facilitates creating the ADO.NET class objects necessary to query a data store
+            </summary>
+            <remarks>
+            <see cref="T:ADO.Net.Client.Core.DbObjectFactory"/> is a class that is intended to be used at the lowest level of the ADO.NET workflow.  
+            It creates the objects necessary to query a relational database using the RDBMS providers own driver to do this.
+            For the .NET framework the providers dll can be within the Global Assembly Cache, and the providers dll can also be used as a dll
+            contained within the application
+            </remarks>
+            <seealso cref="T:ADO.Net.Client.Core.IDbObjectFactory"/>
+        </member>
+        <member name="F:ADO.Net.Client.Core.DbObjectFactory._factory">
+            <summary>
+            An instance of <see cref="T:System.Data.Common.DbProviderFactory"/>
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.DbObjectFactory.CanCreateDataAdapter">
+            <inheritdoc cref="P:ADO.Net.Client.Core.IDbObjectFactory.CanCreateDataAdapter"/>
+        </member>
+        <member name="P:ADO.Net.Client.Core.DbObjectFactory.CanCreateCommandBuilder">
+            <inheritdoc cref="P:ADO.Net.Client.Core.IDbObjectFactory.CanCreateCommandBuilder"/>
+        </member>
+        <member name="P:ADO.Net.Client.Core.DbObjectFactory.CanCreateDataSourceEnumerator">
+            <inheritdoc cref="P:ADO.Net.Client.Core.IDbObjectFactory.CanCreateDataSourceEnumerator"/>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.#ctor(System.Data.Common.DbProviderFactory)">
+            <summary>
+            Instantiates a new instance with the passed in <paramref name="factory"/>
+            </summary>
+            <param name="factory">An instance of the <see cref="T:System.Data.Common.DbProviderFactory"/> client class</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.#ctor(System.String)">
+            <summary>
+            Instantiates a new instance with the passed in <paramref name="providerInvariantName"/>
+            </summary>
+            <param name="providerInvariantName">The name of the data provider that the should be used to query a data store</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.#ctor(System.Data.Common.DbConnection)">
+            <summary>
+            Instantiates a new instance with the passed in <paramref name="connection"/>
+            </summary>
+            <param name="connection">An instance of <see cref="T:System.Data.Common.DbConnection"/> </param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.#ctor(System.Data.DataRow)">
+            <summary>
+            Instantiates a new instance with the passed in <paramref name="row"/>
+            </summary>
+            <param name="row">An instance of <see cref="T:System.Data.DataRow"/> that has the necessary information to create an instance of <see cref="T:System.Data.Common.DbProviderFactory"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetDataSourceEnumerator">
+            <inheritdoc cref="M:ADO.Net.Client.Core.IDbObjectFactory.GetDataSourceEnumerator"/>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetDbDataAdapter">
+            <inheritdoc cref="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbDataAdapter"/>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetDbCommandBuilder">
+            <inheritdoc cref="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbCommandBuilder"/>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetDbConnectionStringBuilder">
+            <inheritdoc cref="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbConnectionStringBuilder"/>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetDbCommand(System.Data.CommandType,System.String,System.Data.Common.DbConnection,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Data.Common.DbTransaction)">
+            <inheritdoc cref="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbCommand(System.Data.CommandType,System.String,System.Data.Common.DbConnection,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Data.Common.DbTransaction)"/>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetDbCommand(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.Int32)">
+            <inheritdoc cref="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbCommand(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.Int32)"/>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetDbCommand(System.Data.Common.DbConnection,System.Int32)">
+            <inheritdoc cref="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbCommand(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.Int32)"/>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetDbCommand(System.Int32)">
+            <inheritdoc cref="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbCommand(System.Int32)"/>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetDbCommand">
+            <inheritdoc cref="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbCommand"/>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetDbConnection">
+            <inheritdoc cref="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbConnection"/>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetDbParameter">
+            <inheritdoc cref="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbParameter"/>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetProviderFactory(System.String)">
+            <summary>
+            Gets an instance of <see cref="T:System.Data.Common.DbProviderFactory"/> based off a .NET drivers <paramref name="providerName"/>, such as System.Data.SqlClientt
+            </summary>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbProviderFactory"/></returns>
+            <exception cref="T:System.ArgumentException">Thrown when the passed in <paramref name="providerName"/> does not have a <see cref="T:System.Data.Common.DbProviderFactory"/> type</exception>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.GetProviderFactory(System.Reflection.Assembly)">
+            <summary>
+            Gets an instance of <see cref="T:System.Data.Common.DbProviderFactory"/> based off a .NET driver <see cref="T:System.Reflection.Assembly"/>
+            Looks for the <see cref="T:System.Data.Common.DbProviderFactory"/> within the current <see cref="T:System.Reflection.Assembly"/>
+            </summary>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbProviderFactory"/></returns>
+            <exception cref="T:System.ArgumentException">Thrown when the passed in <paramref name="assembly"/> does not have a <see cref="T:System.Data.Common.DbProviderFactory"/> type</exception>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbObjectFactory.DbCommand_Disposed(System.Object,System.EventArgs)">
+            <summary>
+            Handles the database command disposed event
+            </summary>
+            <param name="sender">The sender as an instance of <see cref="T:System.Data.Common.DbCommand"/></param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:ADO.Net.Client.Core.DbParameterBuilder">
+            <summary>
+            Class that builds out instances of <see cref="T:System.Data.Common.DbParameter"/>
+            </summary>
+            <seealso cref="T:ADO.Net.Client.Core.IDbParameterBuilder"/>
+        </member>
+        <member name="P:ADO.Net.Client.Core.DbParameterBuilder.Formatter">
+            <summary>
+            Gets an instance of <see cref="T:ADO.Net.Client.Core.IDbParameterFormatter"/>
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.DbParameterBuilder.Factory">
+            <summary>
+            Gets an instance of <see cref="T:ADO.Net.Client.Core.IDbObjectFactory"/>
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterBuilder.#ctor(System.Data.Common.DbProviderFactory)">
+            <summary>
+            Instantiates a new instance of <see cref="T:ADO.Net.Client.Core.DbParameterBuilder"/>
+            </summary>
+            <param name="factory">An instance of <see cref="T:System.Data.Common.DbProviderFactory"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterBuilder.#ctor(System.Data.Common.DbProviderFactory,ADO.Net.Client.Core.IDbParameterFormatter)">
+            <summary>
+            Instantiates a new instance of <see cref="T:ADO.Net.Client.Core.DbParameterBuilder"/>
+            </summary>
+            <param name="factory">An instance of <see cref="T:System.Data.Common.DbProviderFactory"/></param>
+            <param name="formatter">An instance of <see cref="T:ADO.Net.Client.Core.IDbParameterFormatter"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterBuilder.#ctor(ADO.Net.Client.Core.IDbObjectFactory,ADO.Net.Client.Core.IDbParameterFormatter)">
+            <summary>
+            Instantiates a new instance of <see cref="T:ADO.Net.Client.Core.DbParameterBuilder"/>
+            </summary>
+            <param name="factory">An instance of <see cref="T:ADO.Net.Client.Core.IDbObjectFactory"/></param>
+            <param name="formatter">An instance of <see cref="T:ADO.Net.Client.Core.IDbParameterFormatter"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterBuilder.CreateParameter(System.Object,System.Reflection.PropertyInfo)">
+            <summary>
+            Gets an initialized instance of a <see cref="T:System.Data.Common.DbParameter"/>
+            </summary>
+            <param name="parameterValue">The value to assign to the <see cref="T:System.Data.Common.DbParameter"/></param>
+            <param name="info">An instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <exception cref="T:System.InvalidOperationException">Thrown when the passed in instance of <paramref name="info"/> is an ignored property</exception>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbParameter"/> object with information passed into procedure</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterBuilder.CreateParameter(System.String)">
+            <summary>
+            Gets an initialized instance of a <see cref="T:System.Data.Common.DbParameter"/>
+            </summary>
+            <param name="parameterName">The name of the parameter to use to find the parameter value</param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbParameter"/> object with information passed into procedure</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterBuilder.CreateParameter(System.String,System.Object)">
+            <summary>
+            Gets an initialized instance of a <see cref="T:System.Data.Common.DbParameter"/>
+            </summary>
+            <param name="parameterName">The name of the parameter to identify the parameter</param>
+            <param name="parameterValue">The value of the parameter</param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbParameter"/> object with information passed into procedure</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterBuilder.CreateParameter(System.String,System.Object,System.Data.DbType,System.Data.ParameterDirection)">
+            <summary>
+            Gets an initialized instance of a <see cref="T:System.Data.Common.DbParameter"/>
+            </summary>
+            <param name="dataType">The <see cref="T:System.Data.DbType"/> of the field in the database</param>
+            <param name="parameterName">The name of the parameter to identify the parameter</param>
+            <param name="parameterValue">The value of the parameter as a <see cref="T:System.Object"/></param>
+            <param name="paramDirection">The direction of the parameter, defaults to <see cref="F:System.Data.ParameterDirection.Input"/></param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbParameter"/> object with information passed into procedure</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterBuilder.CreateParameter(System.String,System.Object,System.Data.DbType,System.Nullable{System.Int32},System.Data.ParameterDirection)">
+            <summary>
+            Gets an initialized instance of a <see cref="T:System.Data.Common.DbParameter"/> for a variable length data type
+            </summary>
+            <param name="dataType">The <see cref="T:System.Data.DbType"/> of the field in the database</param>
+            <param name="size">maximum size, in bytes, of the data.  The default value is <c>null</c></param>
+            <param name="parameterName">The name of the parameter to identify the parameter</param>
+            <param name="parameterValue">The value of the parameter as a <see cref="T:System.Object"/></param>
+            <param name="paramDirection">The direction of the parameter, defaults to <see cref="F:System.Data.ParameterDirection.Input"/></param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbParameter"/> object with information passed into procedure</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterBuilder.CreateParameters(System.Object[])">
+            <summary>
+            Gets an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/> from the passed in <paramref name="values"/>
+            </summary>
+            <param name="values">An array of values to be used to create <see cref="T:System.Data.Common.DbParameter"/></param>
+            <returns>Returns an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterBuilder.CreateParameter(System.String,System.Object,System.Data.DbType,System.Nullable{System.Byte},System.Nullable{System.Byte},System.Data.ParameterDirection)">
+            <summary>
+            Gets an initialized instance of a <see cref="T:System.Data.Common.DbParameter"/> object based on the specified provider for a fixed size parameter
+            </summary>
+            <param name="dataType">The <see cref="T:System.Data.DbType"/> of the field in the database</param>
+            <param name="parameterName">The name of the parameter to identify the parameter</param>
+            <param name="parameterValue">The value of the parameter as a <see cref="T:System.Object"/></param>
+            <param name="scale">The number of decimal places to which the <see cref="P:System.Data.Common.DbParameter.Value"/> property is resolved.  The default value is <c>null</c></param>
+            <param name="precision">The maximum number of digits used to represent the <see cref="P:System.Data.Common.DbParameter.Value"/> property.  The default value is <c>null</c></param>
+            <param name="paramDirection">The direction of the parameter, defaults to <see cref="F:System.Data.ParameterDirection.Input"/></param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbParameter"/> object with information passed into procedure</returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.DbParameterFormatter">
+            <summary>
+            A <see cref="T:System.Data.Common.DbParameter"/> formatter class that implements <see cref="T:ADO.Net.Client.Core.IDbParameterFormatter"/>
+            </summary>
+            <seealso cref="T:ADO.Net.Client.Core.IDbParameterFormatter" />
+        </member>
+        <member name="P:ADO.Net.Client.Core.DbParameterFormatter.HasNativeGuidSupport">
+            <summary>
+            Gets a value indicating whether this instance has native unique identifier support.  Defaults to <c>true</c>
+            </summary>
+            <value>
+              <c>true</c> if this instance has native unique identifier support; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ADO.Net.Client.Core.DbParameterFormatter.ParameterNamePrefix">
+            <summary>
+            Gets or sets the parameter name prefix.  Defaults to @
+            </summary>
+            <value>
+            The parameter name prefix.
+            </value>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterFormatter.#ctor(System.Boolean,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ADO.Net.Client.Core.DbParameterFormatter"/> class.
+            </summary>
+            <param name="nativeGuidSupport">if set to <c>true</c> the database supports native guid format</param>
+            <param name="parameterNamePrefix">The parameter name prefix.</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterFormatter.MapDbType(System.Reflection.PropertyInfo)">
+            <summary>
+            Maps the type value of a <see cref="T:System.Data.DbType"/> from an instance of <paramref name="info"/>
+            </summary>
+            <param name="info">An instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <returns>Returns a value of <see cref="T:System.Data.DbType"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterFormatter.MapParameterValue(System.Object)">
+            <summary>
+            Maps the value for <see cref="P:System.Data.Common.DbParameter.Value"/> from a <paramref name="value"/>
+            </summary>
+            <param name="value">The value for the parameter</param>
+            <returns>Returns the value for <see cref="P:System.Data.Common.DbParameter.Value"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterFormatter.MapParameterValue(System.Object,System.Reflection.PropertyInfo)">
+            <summary>
+            Maps the value for <see cref="P:System.Data.Common.DbParameter.Value"/> from a <paramref name="value"/> and an instance of <paramref name="info"/>
+            </summary>
+            <param name="value">The value for the parameter</param>
+            <param name="info">An instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <returns>Returns the value for <see cref="P:System.Data.Common.DbParameter.Value"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterFormatter.MapParameterDirection(System.Reflection.PropertyInfo)">
+            <summary>
+            Maps the <see cref="T:System.Data.ParameterDirection"/> from an instance of <paramref name="info"/>
+            </summary>
+            <param name="info">An instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <returns>Returns a value of <see cref="T:System.Data.ParameterDirection"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterFormatter.MapParameterName(System.Reflection.PropertyInfo)">
+            <summary>
+            Maps a parameter name from an instance of <see cref="T:System.Reflection.PropertyInfo"/>
+            </summary>
+            <param name="info">An instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <returns>Returns the name of a parameter</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterFormatter.MapParameterName(System.String)">
+            <summary>
+            Maps the name of the parameter for <see cref="P:System.Data.Common.DbParameter.ParameterName"/>
+            </summary>
+            <param name="parameterName">Name of the parameter.</param>
+            <returns>Returns the name of a parameter to be used for <see cref="P:System.Data.Common.DbParameter.ParameterName"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbParameterFormatter.MapDbParameter(System.Data.Common.DbParameter,System.Object,System.Reflection.PropertyInfo)">
+            <summary>
+            Maps an instance of a <see cref="T:System.Data.Common.DbParameter"/> using the passed in <paramref name="info"/> <paramref name="parameterValue"/>
+            </summary>
+            <param name="parameter">An instance of <see cref="T:System.Data.Common.DbParameter"/></param>
+            <param name="parameterValue">The value of the parameter</param>
+            <param name="info">An instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+        </member>
+        <member name="T:ADO.Net.Client.Core.DbProvider">
+            <summary>
+            Base class for all classes that query a database
+            </summary>
+            <seealso cref="T:ADO.Net.Client.Core.IDbProvider" />
+        </member>
+        <member name="P:ADO.Net.Client.Core.DbProvider.ConnectionManager">
+            <summary>
+            An instance of <see cref="T:ADO.Net.Client.Core.IConnectionManager"/>
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetScalarValueAsync``1(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for returning a <see cref="T:System.Threading.Tasks.Task`1"/> value from the database
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns the value of the first column as <see cref="T:System.Threading.Tasks.Task`1"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetScalarValuesAsync``1(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for returning a <see cref="T:System.Threading.Tasks.Task`1"/> value from the database
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns the value of the first column in the first row as <see cref="T:System.Threading.Tasks.Task`1"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetMultiResultReaderAsync(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Gets an instance of <see cref="T:ADO.Net.Client.Core.IMultiResultReader"/> asynchronously
+            </summary>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns an instance of <see cref="T:ADO.Net.Client.Core.IMultiResultReader"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetDbDataReaderAsync(ADO.Net.Client.Core.ISqlQuery,System.Data.CommandBehavior,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for returning a <see cref="T:System.Threading.Tasks.Task`1"/> object created from the passed in query
+            </summary>
+            <param name="behavior">Provides a description of the results of the query and its effect on the database.  Defaults to <see cref="F:System.Data.CommandBehavior.Default"/></param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> object, the caller is responsible for handling closing the <see cref="T:System.Data.Common.DbDataReader"/>.  Once the data reader is closed, the database connection will be closed as well</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetDataTableAsync(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Gets an instance of <see cref="T:System.Data.DataTable"/> asynchronously
+            </summary>
+            <param name="query">SQL query to use to build a <see cref="T:System.Data.DataTable"/></param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns a <see cref="T:System.Threading.Tasks.Task`1"/> of datatable</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetDataObjectsAsync``1(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Gets an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the type parameter object that creates an object based on the query passed into the routine
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IEnumerable`1"/> of type parameter object based on the fields in the passed in query</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetDataObjectAsync``1(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Gets a single instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Gets an instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine.
+            Or the default value of <typeparamref name="T"/> if there are no search results
+            </returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetDataObjectsStreamAsync``1(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Gets an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the type parameter object that creates an object based on the query passed into the routine streame from the server
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of type parameter object based on the fields in the passed in query</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetScalarValuesStreamAsync``1(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Gets an instance of <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> of the type parameter object that creates an object based on the query passed into the routine streamed from the server
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetDataObject``1(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets a single instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Gets an instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine.
+            Or the default value of <typeparamref name="T"/> if there are no search results
+            </returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetDataObjectsStream``1(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets a list of the type parameter object that creates an object based on the query passed into the routine, streamed from the server
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetDataObjects``1(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets a single instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Gets an instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine.
+            Or the default value of <typeparamref name="T"/> if there are no search results
+            </returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetDataSet(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets an instance of <see cref="T:System.Data.DataSet"/>
+            </summary>
+            <param name="query">SQL query to use to build a <see cref="T:System.Data.DataSet"/></param>
+            <returns>Returns an instance of <see cref="T:System.Data.DataSet"/> based on the <paramref name="query"/> passed into the routine</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetDataTable(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Utility method for returning a <see cref="T:System.Data.DataTable"/> object created from the passed in query
+            </summary>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns a <see cref="T:System.Data.DataTable"/> object</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetDbDataReader(ADO.Net.Client.Core.ISqlQuery,System.Data.CommandBehavior)">
+            <summary>
+            Utility method for returning a <see cref="T:System.Data.Common.DbDataReader"/> object created from the passed in query
+            </summary>
+            <param name="behavior">Provides a description of the results of the query and its effect on the database.  Defaults to <see cref="F:System.Data.CommandBehavior.Default"/></param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>An instance of <see cref="T:System.Data.Common.DbDataReader"/> object, the caller is responsible for handling closing the <see cref="T:System.Data.Common.DbDataReader"/>.  Once the data reader is closed, the database connection will be closed as well</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetScalarValue``1(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Utility method for returning a scalar value from the database
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns the value of the first column in the first row as an instance of <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetScalarValuesStream``1(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets an instance of <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the type parameter object that creates an object based on the query passed into the routine streamed from the server
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetScalarValues``1(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets an instance of <see cref="T:System.Collections.Generic.IEnumerable`1"/> of scalar values
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.GetMultiResultReader(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets an instance of <see cref="T:ADO.Net.Client.Core.IMultiResultReader"/>
+            </summary>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns an instance of <see cref="T:ADO.Net.Client.Core.IMultiResultReader"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.ExecuteNonQuery(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Utility method for executing an Ad-Hoc query or stored procedure
+            </summary>
+            <param name="query">An instance of <see cref="T:ADO.Net.Client.Core.ISqlQuery"/> used to query a data store</param>
+            <returns>Returns the amount of records affected by the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.DbProvider.ExecuteNonQueryAsync(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for executing an Ad-Hoc query or stored procedure
+            </summary>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <param name="query">An instance of <see cref="T:ADO.Net.Client.Core.ISqlQuery"/> used to query a data store</param>
+            <returns>Returns the number of rows affected by the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IAdHocQueryBuilder">
+            <summary>
+            Contract for creating an Ad-hoc query
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.IAdHocQueryBuilder.QueryText">
+            <summary>
+            The query command text to execute against the data store
+            </summary>
+            <value>
+            The <see cref="T:System.String"/> value of ad-hoc query
+            </value>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAdHocQueryBuilder.ClearSQL">
+            <summary>
+            Clears the underlying SQL query being created by this instance
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAdHocQueryBuilder.Append(System.String)">
+            <summary>
+            Appends the specified SQL to the existing SQL statement being built
+            </summary>
+            <param name="sql">The SQL statement to append</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAdHocQueryBuilder.Append(System.String,System.Data.Common.DbParameter)">
+            <summary>
+            Appends the specified SQL to the existing SQL statement being built
+            </summary>
+            <param name="sql">The SQL statement to append</param>
+            <param name="parameter">The database parameter associated with this SQL statement</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAdHocQueryBuilder.Append(System.String,System.String,System.Object)">
+            <summary>
+            Appends the specified SQL to the existing SQL statement being built
+            </summary>
+            <param name="sql">The SQL statement to append</param>
+            <param name="paramerterName">Name of the paramerter.</param>
+            <param name="parmaeterValue">The parmaeter value.</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAdHocQueryBuilder.Append(System.String,System.Object[])">
+            <summary>
+            Appends the specified SQL to the existing SQL statement being built.
+            </summary>
+            <param name="sql">The SQL statement to append</param>
+            <param name="parameters">The database parameters associated with this query</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAdHocQueryBuilder.Append(System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})">
+            <summary>
+            Appends the specified SQL to the existing SQL statement being built
+            </summary>
+            <param name="sql">The SQL statement to append</param>
+            <param name="parameters">The database parameters associated with this query</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAdHocQueryBuilder.CreateAdHocQuery(System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Create an instance of <see cref="T:ADO.Net.Client.Core.ISqlQuery"/> using the existing parameters and <see cref="P:ADO.Net.Client.Core.IAdHocQueryBuilder.QueryText"/>
+            </summary>
+            <param name="clearContents">If <c>true</c> when building the query the current parameters and <see cref="P:ADO.Net.Client.Core.IAdHocQueryBuilder.QueryText"/> will be cleared</param>
+            <param name="shouldBePrepared">Indicates if the current sql string needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IAsynchronousClient">
+            <summary>
+            Contract that defines asynchronous operations to be performed against a data store
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAsynchronousClient.GetDataObjectsStreamAsync``1(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Gets an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the type parameter object that creates an object based on the query passed into the routine streame from the server
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of type parameter object based on the fields in the passed in query</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAsynchronousClient.GetScalarValuesStreamAsync``1(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Gets an instance of <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> of the type parameter object that creates an object based on the query passed into the routine streamed from the server
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAsynchronousClient.GetDataTableAsync(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Gets an instance of <see cref="T:System.Data.DataTable"/> asynchronously
+            </summary>
+            <param name="query">SQL query to use to build a <see cref="T:System.Data.DataTable"/></param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns a <see cref="T:System.Threading.Tasks.Task`1"/> of datatable</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAsynchronousClient.GetDataObjectAsync``1(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Gets a single instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Gets an instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine.
+            Or the default value of <typeparamref name="T"/> if there are no search results
+            </returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAsynchronousClient.GetDataObjectsAsync``1(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Gets an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the type parameter object that creates an object based on the query passed into the routine
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IEnumerable`1"/> of type parameter object based on the fields in the passed in query</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAsynchronousClient.GetDbDataReaderAsync(ADO.Net.Client.Core.ISqlQuery,System.Data.CommandBehavior,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for returning a <see cref="T:System.Threading.Tasks.Task`1"/> object created from the passed in query
+            </summary>
+            <param name="behavior">Provides a description of the results of the query and its effect on the database.  Defaults to <see cref="F:System.Data.CommandBehavior.Default"/></param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> object, the caller is responsible for handling closing the <see cref="T:System.Data.Common.DbDataReader"/>.  Once the data reader is closed, the database connection will be closed as well</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAsynchronousClient.GetScalarValueAsync``1(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for returning a <see cref="T:System.Threading.Tasks.Task`1"/> value from the database
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns the value of the first column in the first row as <see cref="T:System.Threading.Tasks.Task`1"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAsynchronousClient.GetScalarValuesAsync``1(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for returning a <see cref="T:System.Threading.Tasks.Task`1"/> value from the database
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns the value of the first column in the first row as <see cref="T:System.Threading.Tasks.Task`1"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAsynchronousClient.GetMultiResultReaderAsync(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Gets an instance of <see cref="T:ADO.Net.Client.Core.IMultiResultReader"/> asynchronously
+            </summary>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns an instance of <see cref="T:ADO.Net.Client.Core.IMultiResultReader"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IAsynchronousClient.ExecuteNonQueryAsync(ADO.Net.Client.Core.ISqlQuery,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for executing an Ad-Hoc query or stored procedure
+            </summary>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <param name="query">An instance of <see cref="T:ADO.Net.Client.Core.ISqlQuery"/> used to query a data store</param>
+            <returns>Returns the number of rows affected by the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IConnectionManager">
+            <summary>
+            Contract for managing a database connection
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.IConnectionManager.Connection">
+            <summary>
+            Gets the connection that is being used by this instance
+            </summary>
+            <value>
+            An instance of <see cref="T:System.Data.Common.DbConnection"/>
+            </value>
+        </member>
+        <member name="P:ADO.Net.Client.Core.IConnectionManager.Transaction">
+            <summary>
+            Gets the the <see cref="T:System.Data.Common.DbTransaction"/> that was created by the current <see cref="P:ADO.Net.Client.Core.IConnectionManager.Connection"/>
+            </summary>
+            <value>
+            An instance of <see cref="T:System.Data.Common.DbTransaction"/>
+            </value>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IConnectionManager.ReplaceConnection(System.Data.Common.DbConnection)">
+            <summary>
+            Replaces the connection.
+            </summary>
+            <param name="connection">The connection.</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IConnectionManager.StartTransaction">
+            <summary>
+            Starts a database transaction
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IConnectionManager.ClearTransaction">
+            <summary>
+            Clears the current <see cref="T:System.Data.Common.DbTransaction"/>
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IConnectionManager.StartTransaction(System.Data.IsolationLevel)">
+            <summary>
+            Starts a database transaction with the specified <paramref name="level"/>
+            </summary>
+            <param name="level">Specifies the transaction locking behavior for the <see cref="P:ADO.Net.Client.Core.IConnectionManager.Connection"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IConnectionManager.StartTransactionAsync(System.Data.IsolationLevel,System.Threading.CancellationToken)">
+            <summary>
+            Starts a database transaction asynchronously with the specified <paramref name="level"/>
+            </summary>
+            <param name="level">Specifies the transaction locking behavior for the <see cref="P:ADO.Net.Client.Core.IConnectionManager.Connection"/></param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IConnectionManager.StartTransactionAsync(System.Threading.CancellationToken)">
+            <summary>
+            Starts a database transaction asynchronously
+            </summary>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IConnectionStringUtility">
+            <summary>
+            Contract to modify/retrieve values in a connection string
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IConnectionStringUtility.AddConnectionStringProperty(System.String,System.Object)">
+            <summary>
+            Adds a property name and value to the current connection string
+            </summary>
+            <param name="name">The name of the connection string property</param>
+            <param name="value">The value to use with the connection string property</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IConnectionStringUtility.RemoveConnectionStringProperty(System.String)">
+            <summary>
+            Removes a connection string property from the connection string by name
+            </summary>
+            <param name="name">The name of the connection string property</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IConnectionStringUtility.GetConnectionStringPropertyValue(System.String)">
+            <summary>
+            Retrieves a connection string property value as an object
+            </summary>
+            <param name="name">The name of the connection string property</param>
+            <returns>Returns a connection string property as an <see cref="T:System.Object"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IConnectionStringUtility.ConfigureConnectionString(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Configures the connection string with the key value pairs passed into the routine
+            </summary>
+            <param name="properties">Key value pairs of connection string property names and values</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IConnectionStringUtility.ClearConnectionString">
+            <summary>
+            Clears the contents of the connection string
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IConnectionStringUtility.ConnectionStringAllowsKey(System.String)">
+            <summary>
+            Checks if passed in <paramref name="keyword"/> is an allowable keyword in a connection string by the current provider
+            </summary>
+            <param name="keyword">The keyword to check in the providers allowable connection string keywords</param>
+            <returns>Returns a <see cref="T:System.Boolean"/> indicating if the providers connection string allows the passed in keyword</returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IDataMapper">
+            <summary>
+            Contract class that defines the methods that map data from a record in a database to a .NET object
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.IDataMapper.MatchUnderscoreNames">
+            <summary>
+            <c>true</c> if columns named like User_ID should be mapped to property called UserID, <c>false</c> otherwise
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDataMapper.MapResultSetStreamAsync``1(System.Data.Common.DbDataReader,System.Threading.CancellationToken)">
+            <summary>
+            Maps the result set one at a time by streaming the result from the server asynchronously
+            </summary>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <typeparam name="T">The <see cref="T:System.Type"/> the caller wants created from the passed in <paramref name="reader"/></typeparam>
+            <param name="reader">An instance of <see cref="T:System.Data.Common.DbDataReader"/> that contains a result set of records that needs to be mapped</param>
+            <returns>Returns the instance of <typeparamref name="T"/> created from the passed in <paramref name="reader"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDataMapper.MapResultSetAsync``1(System.Data.Common.DbDataReader,System.Threading.CancellationToken)">
+            <summary>
+            Maps an entire result set in the <paramref name="reader"/>
+            </summary>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <typeparam name="T">The <see cref="T:System.Type"/> the caller wants created from the passed in <paramref name="reader"/></typeparam>
+            <param name="reader">An instance of <see cref="T:System.Data.Common.DbDataReader"/> that contains a result set of records that needs to be mapped</param>
+            <returns>Returns the instance of <typeparamref name="T"/> created from the passed in <paramref name="reader"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDataMapper.MapResultSetStream``1(System.Data.Common.DbDataReader)">
+            <summary>
+            Maps the result set one at a time by streaming the result from the server
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> the caller wants created from the passed in <paramref name="reader"/></typeparam>
+            <param name="reader">An instance of <see cref="T:System.Data.Common.DbDataReader"/> that contains a result set of records that needs to be mapped</param>
+            <returns>Returns the instance of <typeparamref name="T"/> created from the passed in <paramref name="reader"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDataMapper.MapResultSet``1(System.Data.Common.DbDataReader)">
+            <summary>
+            Maps an entire result set in the <paramref name="reader"/>
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> the caller wants created from the passed in <paramref name="reader"/></typeparam>
+            <param name="reader">An instance of <see cref="T:System.Data.Common.DbDataReader"/> that contains a result set of records that needs to be mapped</param>
+            <returns>Returns the instance of <typeparamref name="T"/> created from the passed in <paramref name="reader"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDataMapper.MapRecord``1(System.Data.IDataRecord)">
+            <summary>
+            Maps the passed in <paramref name="record"/> to an instance of the <typeparamref name="T"/>
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type"/> the caller wants created from the passed in <paramref name="record"/></typeparam>
+            <param name="record">An instance of <see cref="T:System.Data.IDataRecord"/> to read data from</param>
+            <returns>Returns the instance of <typeparamref name="T"/> created from the passed in <paramref name="record"/></returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IDbObjectFactory">
+            <summary>
+            The contract for a factory class that creates database objects in order to query a database
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.IDbObjectFactory.CanCreateDataSourceEnumerator">
+            <summary>
+            Whether or not the passed in provider is capable of creating a <see cref="T:System.Data.Common.DbDataSourceEnumerator"/>
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.IDbObjectFactory.CanCreateDataAdapter">
+            <summary>
+            Whether or not this instance is capable of creating a <see cref="T:System.Data.Common.DbDataAdapter"/>
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.IDbObjectFactory.CanCreateCommandBuilder">
+            <summary>
+            Whether or not this instance is capable of creating a <see cref="T:System.Data.Common.DbCommandBuilder"/>
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbObjectFactory.GetDataSourceEnumerator">
+            <summary>
+            Gets an instance of <see cref="T:System.Data.Common.DbDataSourceEnumerator"/>
+            </summary>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbDataSourceEnumerator"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbCommandBuilder">
+            <summary>
+            Gets a <see cref="T:System.Data.Common.DbCommandBuilder"/> based on the provider the <see cref="T:ADO.Net.Client.Core.DbObjectFactory"/> is utilizing
+            </summary>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbCommandBuilder"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbDataAdapter">
+            <summary>
+            Gets a <see cref="T:System.Data.Common.DbDataAdapter"/> based on the provider the <see cref="T:ADO.Net.Client.Core.DbObjectFactory"/> is utilizing
+            </summary>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbDataAdapter"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbConnectionStringBuilder">
+            <summary>
+            Gets a <see cref="T:System.Data.Common.DbConnectionStringBuilder"/> based off the provider passed into class
+            </summary>
+            <returns>Returns a <see cref="T:System.Data.Common.DbConnectionStringBuilder"/> based off of target .NET framework data provider</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbCommand">
+            <summary>
+            Gets an instance of a <see cref="T:System.Data.Common.DbCommand"/> object
+            </summary>
+            <returns>Returns an instance of a <see cref="T:System.Data.Common.DbCommand"/> Object</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbCommand(System.Int32)">
+            <summary>
+            Gets an instance of a <see cref="T:System.Data.Common.DbCommand"/> object
+            </summary>
+            <param name="commandTimeout">Gets or sets the wait time in seconds before terminating the attempt to execute a command and generating an error.</param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbCommand"/> Object</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbCommand(System.Data.Common.DbConnection,System.Int32)">
+            <summary>
+            Gets an instance of a formatted <see cref="T:System.Data.Common.DbCommand"/> object based on the specified provider
+            </summary>
+            <param name="commandTimeout">Gets or sets the wait time in seconds before terminating the attempt to execute a command and generating an error.</param>
+            <param name="connection">Represents a connection to a database</param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbCommand"/> object based off the provider passed into the class</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbCommand(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.Int32)">
+            <summary>
+            Gets an instance of a <see cref="T:System.Data.Common.DbCommand"/> subclass based on the specified provider
+            </summary>
+            <param name="commandTimeout">Gets or sets the wait time in seconds before terminating the attempt to execute a command and generating an error.</param>
+            <param name="connection">Represents a <see cref="T:System.Data.Common.DbConnection"/> to a database</param>
+            <param name="transact">An instance of a <see cref="T:System.Data.Common.DbTransaction"/> class</param>
+            <returns>Returns an instantiated formatted <see cref="T:System.Data.Common.DbCommand"/> object based off the provider passed into the class</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbCommand(System.Data.CommandType,System.String,System.Data.Common.DbConnection,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Data.Common.DbTransaction)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:System.Data.Common.DbCommand"/> subclass based on the provider passed into the class constructor
+            </summary>
+            <param name="commandTimeout">Gets or sets the wait time in seconds before terminating the attempt to execute a command and generating an error.</param>
+            <param name="connection">Represents a connection to a database</param>
+            <param name="transaction">An instance of <see cref="T:System.Data.Common.DbTransaction"/></param>
+            <param name="parameters">The <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/> associated with the query parameter</param>
+            <param name="query">The SQL command text or name of stored procedure to execute against the data store</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <returns>Returns an instantiated formatted <see cref="T:System.Data.Common.DbCommand"/> object based off the provider passed into the class</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbConnection">
+            <summary>
+            Instantiates a new instance of a <see cref="T:System.Data.Common.DbConnection"/> subclass based on the specified provider
+            </summary>
+            <returns>Returns a new instance of the <see cref="T:System.Data.Common.DbConnection"/> subclass based on the specified provider</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbObjectFactory.GetDbParameter">
+            <summary>
+            Create an instance of a <see cref="T:System.Data.Common.DbParameter"/> based off of the provider passed into factory
+            </summary>
+            <returns>Returns an instantiated <see cref="T:System.Data.Common.DbParameter"/> object</returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IDbParameterBuilder">
+            <summary>
+            Contract for creating instances of <see cref="T:System.Data.Common.DbParameter"/>
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterBuilder.CreateParameter(System.Object,System.Reflection.PropertyInfo)">
+            <summary>
+            Gets an initialized instance of a <see cref="T:System.Data.Common.DbParameter"/>
+            </summary>
+            <param name="parameterValue">The value to assign to the <see cref="T:System.Data.Common.DbParameter"/></param>
+            <param name="info">An instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbParameter"/> object with information passed into procedure</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterBuilder.CreateParameter(System.String)">
+            <summary>
+            Gets an initialized instance of a <see cref="T:System.Data.Common.DbParameter"/>
+            </summary>
+            <param name="parameterName">The name of the parameter to use to find the parameter value</param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbParameter"/> object with information passed into procedure</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterBuilder.CreateParameter(System.String,System.Object)">
+            <summary>
+            Gets an initialized instance of a <see cref="T:System.Data.Common.DbParameter"/>
+            </summary>
+            <param name="parameterName">The name of the parameter to identify the parameter</param>
+            <param name="parameterValue">The value of the parameter</param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbParameter"/> object with information passed into procedure</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterBuilder.CreateParameters(System.Object[])">
+            <summary>
+            Gets an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/> from the passed in <paramref name="values"/>
+            </summary>
+            <param name="values">An array of values to be used to create <see cref="T:System.Data.Common.DbParameter"/></param>
+            <returns>Returns an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterBuilder.CreateParameter(System.String,System.Object,System.Data.DbType,System.Data.ParameterDirection)">
+            <summary>
+            Gets an initialized instance of a <see cref="T:System.Data.Common.DbParameter"/>
+            </summary>
+            <param name="dataType">The <see cref="T:System.Data.DbType"/> of the field in the database</param>
+            <param name="parameterName">The name of the parameter to identify the parameter</param>
+            <param name="parameterValue">The value of the parameter as a <see cref="T:System.Object"/></param>
+            <param name="paramDirection">The direction of the parameter, defaults to <see cref="F:System.Data.ParameterDirection.Input"/></param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbParameter"/> object with information passed into procedure</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterBuilder.CreateParameter(System.String,System.Object,System.Data.DbType,System.Nullable{System.Int32},System.Data.ParameterDirection)">
+            <summary>
+            Gets an initialized instance of a <see cref="T:System.Data.Common.DbParameter"/> for a variable length data type
+            </summary>
+            <param name="dataType">The <see cref="T:System.Data.DbType"/> of the field in the database</param>
+            <param name="size">maximum size, in bytes, of the data.  The default value is <c>null</c></param>
+            <param name="parameterName">The name of the parameter to identify the parameter</param>
+            <param name="parameterValue">The value of the parameter as a <see cref="T:System.Object"/></param>
+            <param name="paramDirection">The direction of the parameter, defaults to <see cref="F:System.Data.ParameterDirection.Input"/></param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbParameter"/> object with information passed into procedure</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterBuilder.CreateParameter(System.String,System.Object,System.Data.DbType,System.Nullable{System.Byte},System.Nullable{System.Byte},System.Data.ParameterDirection)">
+            <summary>
+            Gets an initialized instance of a <see cref="T:System.Data.Common.DbParameter"/> for a fixed size parameter
+            </summary>
+            <param name="dataType">The <see cref="T:System.Data.DbType"/> of the field in the database</param>
+            <param name="parameterName">The name of the parameter to identify the parameter</param>
+            <param name="parameterValue">The value of the parameter as a <see cref="T:System.Object"/></param>
+            <param name="scale">The number of decimal places to which the <see cref="P:System.Data.Common.DbParameter.Value"/> property is resolved.  The default value is <c>null</c></param>
+            <param name="precision">The maximum number of digits used to represent the <see cref="P:System.Data.Common.DbParameter.Value"/> property.  The default value is <c>null</c></param>
+            <param name="paramDirection">The direction of the parameter, defaults to <see cref="F:System.Data.ParameterDirection.Input"/></param>
+            <returns>Returns an instance of <see cref="T:System.Data.Common.DbParameter"/> object with information passed into procedure</returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IDbParameterFormatter">
+            <summary>
+            Contract the defines the behavior of a <see cref="T:System.Data.Common.DbParameter"/> formatter class
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.IDbParameterFormatter.HasNativeGuidSupport">
+            <summary>
+            Gets a value indicating whether this instance has native unique identifier support.  Defaults to <c>true</c>
+            </summary>
+            <value>
+              <c>true</c> if this instance has native unique identifier support; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ADO.Net.Client.Core.IDbParameterFormatter.ParameterNamePrefix">
+            <summary>
+            Gets or sets the parameter name prefix.
+            </summary>
+            <value>
+            The parameter name prefix.
+            </value>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterFormatter.MapParameterName(System.Reflection.PropertyInfo)">
+            <summary>
+            Maps a parameter name from an instance of <see cref="T:System.Reflection.PropertyInfo"/>
+            </summary>
+            <param name="info">An instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <returns>Returns the name of a parameter</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterFormatter.MapParameterName(System.String)">
+            <summary>
+            Maps the name of the parameter.
+            </summary>
+            <param name="parameterName">Name of the parameter.</param>
+            <returns>Returns the name of a parameter</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterFormatter.MapDbParameter(System.Data.Common.DbParameter,System.Object,System.Reflection.PropertyInfo)">
+            <summary>
+            Maps an instance of a <see cref="T:System.Data.Common.DbParameter"/> using the passed in <paramref name="info"/> <paramref name="parameterValue"/>
+            </summary>
+            <param name="parameter">An instance of <see cref="T:System.Data.Common.DbParameter"/></param>
+            <param name="parameterValue">The value of the parameter</param>
+            <param name="info">An instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterFormatter.MapDbType(System.Reflection.PropertyInfo)">
+            <summary>
+            Maps the type value of a <see cref="T:System.Data.DbType"/> from an instance of <paramref name="info"/>
+            </summary>
+            <param name="info">An instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <returns>Returns a value of <see cref="T:System.Data.DbType"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterFormatter.MapParameterValue(System.Object)">
+            <summary>
+            Maps the value for <see cref="P:System.Data.Common.DbParameter.Value"/> from a <paramref name="value"/>
+            </summary>
+            <param name="value">The value for the parameter</param>
+            <returns>Returns the value for <see cref="P:System.Data.Common.DbParameter.Value"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterFormatter.MapParameterValue(System.Object,System.Reflection.PropertyInfo)">
+            <summary>
+            Maps the value for <see cref="P:System.Data.Common.DbParameter.Value"/> from a <paramref name="value"/> and an instance of <paramref name="info"/>
+            </summary>
+            <param name="value">The value for the parameter</param>
+            <param name="info">An instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <returns>Returns the value for <see cref="P:System.Data.Common.DbParameter.Value"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IDbParameterFormatter.MapParameterDirection(System.Reflection.PropertyInfo)">
+            <summary>
+            Maps the <see cref="T:System.Data.ParameterDirection"/> from an instance of <paramref name="info"/>
+            </summary>
+            <param name="info">An instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <returns>Returns a value of <see cref="T:System.Data.ParameterDirection"/></returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IDbProvider">
+            <summary>
+            Contract for all DbProvider based classes
+            </summary>
+            <seealso cref="T:ADO.Net.Client.Core.ISynchronousClient"/>
+            <seealso cref="T:ADO.Net.Client.Core.IAsynchronousClient"/>
+        </member>
+        <member name="P:ADO.Net.Client.Core.IDbProvider.ConnectionManager">
+            <summary>
+            An instance of <see cref="T:ADO.Net.Client.Core.IConnectionManager"/>
+            </summary>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IMultiResultReader">
+            <summary>
+            Contract for an instance that reads records from a database result set
+            </summary>
+            <see cref="T:ADO.Net.Client.Core.IMultiResultReaderAsync"/>
+            <see cref="T:ADO.Net.Client.Core.IMultiResultReaderSync"/>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IMultiResultReaderAsync">
+            <summary>
+            Contract for a reader that performs asynchronous read operations against a database
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IMultiResultReaderAsync.ReadObjectsStreamAsync``1(System.Threading.CancellationToken)">
+            <summary>
+            Gets an <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> based on the <typeparamref name="T"/> streamed from the server asynchronously
+            </summary>
+            <typeparam name="T">An instance of the type the caller wants create from the query passed into procedure</typeparam>
+            <param name="token">Structure that propagates a notification that an operation should be cancelled</param>
+            <returns>Returns an instance of <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IMultiResultReaderAsync.ReadObjectsAsync``1(System.Threading.CancellationToken)">
+            <summary>
+            Gets an entire <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <typeparamref name="T"/> asynchronously
+            </summary>
+            <typeparam name="T">An instance of the type the caller wants create from the query passed into procedure</typeparam>
+            <param name="token">Structure that propagates a notification that an operation should be cancelled</param>
+            <returns>Returns an instance of <see cref="T:System.Collections.Generic.IEnumerable`1"/> as an entire collection of <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IMultiResultReaderAsync.ReadObjectAsync``1(System.Threading.CancellationToken)">
+            <summary>
+            Gets a single instance of <typeparamref name="T"/> asynchronously
+            </summary>
+            <typeparam name="T">An instance of the type the caller wants create from the query passed into procedure</typeparam>
+            <param name="token">Structure that propagates a notification that an operation should be cancelled</param>
+            <returns>Gets an instance of <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IMultiResultReaderAsync.MoveToNextResultAsync(System.Threading.CancellationToken)">
+            <summary>
+            Moves to next result set in the underlying data set asynchronously
+            </summary>
+            <param name="token">Structure that propagates a notification that an operation should be cancelled</param>
+            <returns>Returns <c>true</c> if there's another result set in the data set <c>false</c> otherwise</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IMultiResultReaderAsync.CloseAsync">
+            <summary>
+            Closes the underlying reader object that reads records from the database asynchronously
+            </summary>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IMultiResultReaderSync">
+            <summary>
+            Contract for a reader that performs synchronous read operations against a database
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IMultiResultReaderSync.ReadObjectsStream``1">
+            <summary>
+            Gets an <see cref="T:System.Collections.Generic.IEnumerable`1"/> based on the <typeparamref name="T"/> streamed from the server
+            </summary>
+            <typeparam name="T">An instance of the type the caller wants create from the query passed into procedure</typeparam>
+            <returns>Returns an instance of <see cref="T:System.Collections.Generic.IEnumerable`1"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IMultiResultReaderSync.ReadObjects``1">
+            <summary>
+            Gets an entire <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <typeparamref name="T"/>
+            </summary>
+            <typeparam name="T">An instance of the type the caller wants create from the query passed into procedure</typeparam>
+            <returns>Returns an instance of <see cref="T:System.Collections.Generic.IEnumerable`1"/> as an entire collection of <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IMultiResultReaderSync.ReadObject``1">
+            <summary>
+            Gets a single instance of <typeparamref name="T"/>
+            </summary>
+            <typeparam name="T">An instance of the type the caller wants create from the query passed into procedure</typeparam>
+            <returns>Gets an instance of <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IMultiResultReaderSync.MoveToNextResult">
+            <summary>
+            Moves to the next result in the underlying data set
+            </summary>
+            <returns>Returns <c>true</c> if there's another result set in the underlying data set <c>false</c> otherwise</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IMultiResultReaderSync.Close">
+            <summary>
+            Closes the underlying reader object that reads records from the database synchronously
+            </summary>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IQueryBuilder">
+            <summary>
+            Contract that builds out queries to be executed against a database
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.IQueryBuilder.Parameters">
+            <summary>
+            The database parameters associated with a query
+            </summary>
+            <value>
+            The parameters associated with a query as a <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/>
+            </value>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IQueryBuilder.GetParameter(System.String)">
+            <summary>
+            Retrieves a <see cref="T:System.Data.Common.DbParameter"/> object by using the passed in parameter name
+            </summary>
+            <param name="parameterName">The name of the parameter to use to find the parameter value</param>
+            <returns>The specified <see cref="T:System.Data.Common.DbParameter"/> by name</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IQueryBuilder.AddParameter(System.Data.Common.DbParameter)">
+            <summary>
+            Adds the passed in parameter to the parameters collection
+            </summary>
+            <param name="param">An instance of the <see cref="T:System.Data.Common.DbParameter"/> object, that is created the by the caller</param>
+            <returns>Returns a <see cref="T:System.Data.Common.DbParameter"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IQueryBuilder.AddParameter(System.String,System.Object)">
+            <summary>
+            Adds the passed in parameter to the parameters collection
+            </summary>
+            <param name="parameterName">The name of the parameter to identify the parameter</param>
+            <param name="parameterValue">The value of the parameter as an <see cref="T:System.Object"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IQueryBuilder.AddParameterRange(System.Object[])">
+            <summary>
+            Adds the passed in parameter to the parameters collection
+            </summary>
+            <param name="parameters">The parameters that are associated with a database query</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IQueryBuilder.RemoveParameter(System.String)">
+            <summary>
+            Removes a <see cref="T:System.Data.Common.DbParameter"/> from the parameters collection by using the parameter name
+            </summary>
+            <param name="parameterName">The name of the parameter to identify the parameter to remove from the collection</param>
+            <returns>Returns true if item was successfully removed, false otherwise if item was not found in the list</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IQueryBuilder.ReplaceParameter(System.String,System.Data.Common.DbParameter)">
+            <summary>
+            Replaces an existing parameter with the new <see cref="T:System.Data.Common.DbParameter"/> with an existing <see cref="P:System.Data.Common.DbParameter.ParameterName"/>
+            </summary>
+            <param name="parameterName">The index as a <c>string</c> to use when searching for the existing parameter</param>
+            <param name="param">A new instance of <see cref="T:System.Data.Common.DbParameter"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IQueryBuilder.ClearParameters">
+            <summary>
+            Clears all parameters from the parameters collection
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IQueryBuilder.SetParameterValue(System.String,System.Object)">
+            <summary>
+            Sets the value of an existing <see cref="T:System.Data.Common.DbParameter"/> by using the <paramref name="parameterName"/> and passed in <paramref name="value"/>
+            </summary>
+            <param name="parameterName">The name of the parameter to identify the parameter</param>
+            <param name="value">The value of the parameter as an <see cref="T:System.Object"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IQueryBuilder.AddParameterRange(System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})">
+            <summary>
+            Adds an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/> objects to the helpers underlying db parameter collection
+            </summary>
+            <param name="dbParams">An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/> to add to the underlying db parameter collection for the connection</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IQueryBuilder.Contains(System.String)">
+            <summary>
+            Checks for a parameter in the parameters collection with the passed in name
+            </summary>
+            <param name="parameterName">The name of the parameter to use when searching the <see cref="P:ADO.Net.Client.Core.IQueryBuilder.Parameters"/></param>
+            <returns>True if this parameter exists in the parameters collection, false otherwise</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IQueryBuilder.Contains(System.Data.Common.DbParameter)">
+            <summary>
+            Determines whether this instance contains the passed in <paramref name="parameter"/>
+            </summary>
+            <param name="parameter">An instance of <see cref="T:System.Data.Common.DbParameter"/> that may be associated with this instance</param>
+            <returns>
+              <c>true</c> if this instance contains the passed in <paramref name="parameter"/> otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.ISqlExecutor">
+            <summary>
+            The contract class for a ISqlExecutor based class
+            </summary>
+            <seealso cref="T:ADO.Net.Client.Core.ISqlExecutorAsync"/>
+            <seealso cref="T:ADO.Net.Client.Core.ISqlExecutorSync"/>
+        </member>
+        <member name="P:ADO.Net.Client.Core.ISqlExecutor.ConnectionManager">
+            <summary>
+            An instance of <see cref="T:ADO.Net.Client.Core.IConnectionManager"/>
+            </summary>
+        </member>
+        <member name="T:ADO.Net.Client.Core.ISqlExecutorAsync">
+            <summary>
+            Contract that defines asynchronous operations against a database
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorAsync.GetScalarValuesStreamAsync``1(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for returning an <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> of scalar values streamed from the database
+            </summary>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="parameters">The parameters associated with a database query</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <typeparam name="T">The data type to return from data value returned from the query</typeparam>
+            <returns>Returns an <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> of the value of the first column in the result set as an instance of <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorAsync.GetScalarValuesAsync``1(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for returning an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of scalar values from the database
+            </summary>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="parameters">The parameters associated with a database query</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <typeparam name="T">The data type to return from data value returned from the query</typeparam>
+            <returns>Returns an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the value of the first column in the result set as an instance of <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorAsync.GetDataObjectAsync``1(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets a single instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <typeparam name="T">An instance of the type the caller wants create from the query passed into procedure</typeparam>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="parameters">The database parameters associated with a query</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Gets an instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorAsync.GetDataObjectsStreamAsync``1(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets a <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> based on the <typeparamref name="T"/> sent into the function to create an object list based on the query passed into the routine
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="shouldBePrepared">>An instance of the type the caller wants to create from the query passed into procedure</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="parameters">The database parameters that are associated with a query</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorAsync.GetDataObjectsAsync``1(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets a <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the type parameter object that creates an object based on the query passed into the routine
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="parameters">The database parameters that are associated with a query</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorAsync.GetDbDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean,System.Data.CommandBehavior,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for returning a <see cref="T:System.Threading.Tasks.Task`1"/> object
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="parameters">The database parameters that are associated with a query</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="behavior">Provides a description of the results of the query and its effect on the database.  Defaults to <see cref="F:System.Data.CommandBehavior.Default"/></param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>A <see cref="T:System.Data.Common.DbDataReader"/> object, the caller is responsible for handling closing the DataReader.  Once the data reader is closed, the Database Connection will be closed as well</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorAsync.GetScalarValueAsync``1(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for returning a <see cref="T:System.Threading.Tasks.Task`1"/> from the database
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <param name="parameters">The database parameters that are associated with a query</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <typeparam name="T">The data type to return from data value returned from the query</typeparam>
+            <returns>Returns the value of the first column in the first row as an instance of <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorAsync.GetMultiResultReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for returning an instance of <see cref="T:ADO.Net.Client.Core.IMultiResultReader"/> asynchronously
+            </summary>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="parameters">The query database parameters that are associated with a query</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>An instance of <see cref="T:ADO.Net.Client.Core.IMultiResultReader"/> object</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorAsync.ExecuteNonQueryAsync(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Utility method for executing an Ad-Hoc query or stored procedure without a transaction
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="parameters">The query database parameters that are associated with a query</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="token">Structure that propogates a notification that an operation should be cancelled</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns the number of rows affected by this query</returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.ISqlExecutorSync">
+            <summary>
+            Contract that defines syncrhonous operations against a database
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorSync.GetDataSet(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Gets an instance of <see cref="T:System.Data.DataSet"/>
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="parameters">The query database parameters that are associated with a query</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns an instance of <see cref="T:System.Data.DataSet"/> based on the <paramref name="query"/> passed into the routine</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorSync.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Gets an instance of <see cref="T:System.Data.DataTable"/>
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="parameters">The query database parameters that are associated with a query</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns an instance of <see cref="T:System.Data.DataTable"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorSync.GetDataObject``1(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Gets a single instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="parameters">The query database parameters that are associated with a query</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns an instance of the <typeparamref name="T"/> based on the fields in the passed in query.  Returns the default value for the type if a record is not found</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorSync.GetDataObjects``1(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Gets a <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the type parameter object that creates an object based on the query passed into the routine
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <typeparam name="T">An instance of the type caller wants created from the query passed into procedure</typeparam>
+            <param name="parameters">The query database parameters that are associated with a query</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param> 
+            <returns>Returns a <see cref="T:System.Collections.Generic.IEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorSync.GetDataObjectsStream``1(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Gets a <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the type parameter object that creates an object based on the query passed into the routine as an iterator function
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="parameters">The query database parameters that are associated with a query</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorSync.GetDbDataReader(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean,System.Data.CommandBehavior)">
+            <summary>
+            Utility method for returning a DataReader object
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="behavior">Provides a description of the results of the query and its effect on the database.  Defaults to <see cref="F:System.Data.CommandBehavior.Default"/></param>
+            <param name="parameters">The query database parameters that are associated with a query</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>An instance of <see cref="T:System.Data.Common.DbDataReader"/> object</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorSync.GetScalarValue``1(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Utility method for returning a scalar value from the database
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="parameters">The query database parameters that are associated with a query</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <typeparam name="T">The data type to return from data value returned from the query</typeparam>
+            <returns>Returns the value of the first column in the first row returned from the passed in query as an instance of <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorSync.GetScalarValues``1(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Utility method for returning an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of scalar values from the database
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="parameters">The parameters associated with a database query</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <typeparam name="T">The data type to return from data value returned from the query</typeparam>
+            <returns>Returns an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the value of the first column in the result set as an instance of <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorSync.GetScalarValuesStream``1(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Utility method for returning an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of scalar values streamed from the database
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="parameters">The parameters associated with a database query</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <typeparam name="T">The data type to return from data value returned from the query</typeparam>
+            <returns>Returns an <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the value of the first column in the result set as an instance of <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorSync.GetMultiResultReader(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Utility method for returning an instance of <see cref="T:ADO.Net.Client.Core.IMultiResultReader"/>
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="parameters">The query database parameters that are associated with a query</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>An instance of <see cref="T:ADO.Net.Client.Core.IMultiResultReader"/> object</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISqlExecutorSync.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Utility method for executing an Ad-Hoc query or stored procedure without a transaction
+            </summary>
+            <param name="shouldBePrepared">Indicates if the current <paramref name="query"/> needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="parameters">The query database parameters that are associated with a query</param>
+            <param name="queryCommandType">Represents how a command should be interpreted by the data provider</param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns the number of rows affected by this query</returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.ISqlQuery">
+            <summary>
+            Contract for a transfer object that contains the information about a query to use when querying a datastore
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.ISqlQuery.ShouldBePrepared">
+            <summary>
+            Indicates if the current <see cref="P:ADO.Net.Client.Core.ISqlQuery.QueryText"/> needs to be prepared (or compiled) version of the command on the data source.
+            </summary>
+            <value>
+              <c>true</c> if the <see cref="P:ADO.Net.Client.Core.ISqlQuery.QueryText"/> needs to be prepared; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ADO.Net.Client.Core.ISqlQuery.QueryType">
+            <summary>
+            Represents how a command should be interpreted by the data provider
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.ISqlQuery.QueryText">
+            <summary>
+            The query command text or name of stored procedure to execute against the data store
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.ISqlQuery.Parameters">
+            <summary>
+            The database parameters that are associated with a query
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.ISqlQuery.CommandTimeout">
+            <summary>
+            Gets or sets the wait time in seconds before terminating the attempt to execute a command and generating an error.
+            </summary>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IStoredProcedureQueryBuilder">
+            <summary>
+            Contract for creating stored procedure queries
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IStoredProcedureQueryBuilder.CreateStoredProcedure(System.String,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Create an instance of <see cref="T:ADO.Net.Client.Core.ISqlQuery"/> using the existing parameters and <paramref name="storedProcedure"/>
+            </summary>
+            <param name="storedProcedure">The name of the stored procedure to execute</param>
+            <param name="clearContents">If <c>true</c> when building the query the current parameters will be cleared</param>
+            <param name="shouldBePrepared">Indicates if the current sql string needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+        </member>
+        <member name="T:ADO.Net.Client.Core.ISynchronousClient">
+            <summary>
+            Contract that defines synchronous operations to be performed against a data store
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISynchronousClient.GetDataSet(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets an instance of <see cref="T:System.Data.DataSet"/>
+            </summary>
+            <param name="query">SQL query to use to build a <see cref="T:System.Data.DataSet"/></param>
+            <returns>Returns an instance of <see cref="T:System.Data.DataSet"/> based on the <paramref name="query"/> passed into the routine</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISynchronousClient.GetDataTable(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Utility method for returning a <see cref="T:System.Data.DataTable"/> object created from the passed in query
+            </summary>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns a <see cref="T:System.Data.DataTable"/> object</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISynchronousClient.GetDataObject``1(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets a single instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Gets an instance of <typeparamref name="T"/> based on the <paramref name="query"/> passed into the routine.
+            Or the default value of <typeparamref name="T"/> if there are no search results
+            </returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISynchronousClient.GetDataObjects``1(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets an instance of <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the type parameter object that creates an object based on the query passed into the routine
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns an <see cref="T:System.Collections.Generic.IEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISynchronousClient.GetDataObjectsStream``1(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets a list of the type parameter object that creates an object based on the query passed into the routine, streamed from the server
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISynchronousClient.GetDbDataReader(ADO.Net.Client.Core.ISqlQuery,System.Data.CommandBehavior)">
+            <summary>
+            Utility method for returning a <see cref="T:System.Data.Common.DbDataReader"/> object created from the passed in query
+            </summary>
+            <param name="behavior">Provides a description of the results of the query and its effect on the database.  Defaults to <see cref="F:System.Data.CommandBehavior.Default"/></param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>An instance of <see cref="T:System.Data.Common.DbDataReader"/> object, the caller is responsible for handling closing the <see cref="T:System.Data.Common.DbDataReader"/>.  Once the data reader is closed, the database connection will be closed as well</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISynchronousClient.GetScalarValue``1(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Utility method for returning a scalar value from the database
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns the value of the first column in the first row as an object</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISynchronousClient.GetScalarValuesStream``1(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets an instance of <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the type parameter object that creates an object based on the query passed into the routine streamed from the server
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISynchronousClient.GetScalarValues``1(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets an instance of <see cref="T:System.Collections.Generic.IEnumerable`1"/> of scalar values
+            </summary>
+            <typeparam name="T">An instance of the type caller wants create from the query passed into procedure</typeparam>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns a <see cref="T:System.Collections.Generic.IEnumerable`1"/> based on the results of the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISynchronousClient.GetMultiResultReader(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Gets an instance of <see cref="T:ADO.Net.Client.Core.IMultiResultReader"/>
+            </summary>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns an instance of <see cref="T:ADO.Net.Client.Core.IMultiResultReader"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.ISynchronousClient.ExecuteNonQuery(ADO.Net.Client.Core.ISqlQuery)">
+            <summary>
+            Utility method for executing an Ad-Hoc query or stored procedure
+            </summary>
+            <param name="query">An instance of <see cref="T:ADO.Net.Client.Core.ISqlQuery"/> used to query a data store</param>
+            <returns>Returns the amount of records affected by the passed in <paramref name="query"/></returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.IXMLExecutor">
+            <summary>
+            Contract that defines how a class that can execute sql queries should return xml from the database
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IXMLExecutor.ExecuteXMLReader(System.String)">
+            <summary>
+            Returns an instance of <see cref="T:System.Xml.XmlReader"/> based on the <paramref name="query"/>
+            </summary>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns an instance of <see cref="T:System.Xml.XmlReader"/> based on the <paramref name="query"/> passed into the routine</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.IXMLExecutor.ExecuteXMLReaderAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Returns an instance of <see cref="T:System.Xml.XmlReader"/> based on the <paramref name="query"/>
+            </summary>
+            <param name="token"></param>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <returns>Returns an instance of <see cref="T:System.Xml.XmlReader"/> based on the <paramref name="query"/> passed into the routine</returns>
+        </member>
+        <member name="T:ADO.Net.Client.Core.QueryBuilder">
+            <summary>
+            Base for classes that build out queries to be executed against a database
+            </summary>
+            <seealso cref="T:ADO.Net.Client.Core.IQueryBuilder"/>
+        </member>
+        <member name="P:ADO.Net.Client.Core.QueryBuilder.Parameters">
+            <summary>
+            The parameters associated with a query as a <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/>
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.#ctor(ADO.Net.Client.Core.IDbParameterBuilder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ADO.Net.Client.Core.QueryBuilder"/> class.
+            </summary>
+            <param name="parameterBuilder">An  instance of <see cref="T:ADO.Net.Client.Core.IDbParameterBuilder"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.#ctor(ADO.Net.Client.Core.IDbParameterBuilder,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ADO.Net.Client.Core.QueryBuilder"/> class.
+            </summary>
+            <param name="parameterBuilder">An instance of <see cref="T:ADO.Net.Client.Core.IDbParameterBuilder"/></param>
+            <param name="parameters">The database parameters associated with a query</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.CreateSQLQuery(System.String,System.Data.CommandType,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Create an instance of <see cref="T:ADO.Net.Client.Core.ISqlQuery"/>
+            </summary>
+            <param name="clearContents">If <c>true</c> when building the query the current <see cref="P:ADO.Net.Client.Core.QueryBuilder.Parameters"/> will be cleared</param>
+            <param name="queryText">The Ad-Hoc query or stored procedure name</param>
+            <param name="shouldBePrepared">Indicates if the current sql string needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="type">Represents how a command should be interpreted by the data provider</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.AddParameter(System.Data.Common.DbParameter)">
+            <summary>
+            Adds the passed in parameter to the <see cref="P:ADO.Net.Client.Core.QueryBuilder.Parameters"/>
+            </summary>
+            <param name="param">An instance of the <see cref="T:System.Data.Common.DbParameter" /></param>
+            <exception cref="T:System.ArgumentException">Throws argument exception when there are duplicate parameter names</exception>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.AddParameter(System.String,System.Object)">
+            <summary>
+            Adds the passed in parameter to the <see cref="P:ADO.Net.Client.Core.QueryBuilder.Parameters"/>
+            </summary>
+            <param name="parameterName">The name of the parameter to identify the parameter</param>
+            <param name="parameterValue">The value of the parameter as an <see cref="T:System.Object"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.AddParameterRange(System.Object[])">
+            <summary>
+            Adds the passed in parameter to the <see cref="P:ADO.Net.Client.Core.QueryBuilder.Parameters"/>
+            </summary>
+            <param name="parameters">The parameters that are associated with a database query</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.AddParameterRange(System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})">
+            <summary>
+            Adds an <see cref="T:System.Collections.Generic.IEnumerable`1" /> of <see cref="T:System.Data.Common.DbParameter"/> to the <see cref="P:ADO.Net.Client.Core.QueryBuilder.Parameters"/>
+            </summary>
+            <exception cref="T:System.ArgumentException">Throws argument exception when there are duplicate parameter names</exception>
+            <param name="dbParams">An <see cref="T:System.Collections.Generic.IEnumerable`1" /> to add to the <see cref="P:ADO.Net.Client.Core.QueryBuilder.Parameters"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.ClearParameters">
+            <summary>
+            Clears all parameters from the <see cref="P:ADO.Net.Client.Core.QueryBuilder.Parameters"/>
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.Contains(System.String)">
+            <summary>
+            Checks for a parameter in the <see cref="P:ADO.Net.Client.Core.QueryBuilder.Parameters"/> with by <paramref name="parameterName"/>
+            </summary>
+            <param name="parameterName">The name of the parameter to use when searching the <see cref="P:ADO.Net.Client.Core.QueryBuilder.Parameters"/></param>
+            <exception cref="T:System.ArgumentException">Thrown when the <paramref name="parameterName"/> passed into routine is null or empty</exception>
+            <returns>True if this parameter exists in the parameters collection, false otherwise</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.Contains(System.Data.Common.DbParameter)">
+            <summary>
+            Determines whether this instance contains the passed in <paramref name="parameter"/>
+            </summary>
+            <param name="parameter">An instance of <see cref="T:System.Data.Common.DbParameter"/> that may be associated with this instance</param>
+            <returns>
+              <c>true</c> if this instance contains the passed in <paramref name="parameter"/> otherwise, <c>false</c>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when the passed in <paramref name="parameter"/> is <c>null</c></exception>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.GetParameter(System.String)">
+            <summary>
+            Retrieves a <see cref="T:System.Data.Common.DbParameter"/> object by using the passed in parameter name
+            </summary>
+            <exception cref="T:System.ArgumentException">Throws when the passed in <paramref name="parameterName"/> is <c>null</c> or <see cref="F:System.String.Empty"/></exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the passed in parameter name is not present in the parameters collection</exception>
+            <param name="parameterName">The name of the parameter to use to find the parameter value</param>
+            <returns>The specified <see cref="T:System.Data.Common.DbParameter"/> object from the <see cref="P:ADO.Net.Client.Core.QueryBuilder.Parameters"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.RemoveParameter(System.String)">
+            <summary>
+            Removes a <see cref="T:System.Data.Common.DbParameter"/> from the <see cref="P:ADO.Net.Client.Core.QueryBuilder.Parameters"/> for the current <see cref="T:System.Data.Common.DbConnection"/> by using the parameter name
+            </summary>
+            <param name="parameterName">The name of the parameter to identify the parameter to remove from the <see cref="P:ADO.Net.Client.Core.QueryBuilder.Parameters"/></param>
+            <returns>Returns true if item was successfully removed, false otherwise if item was not found in the list</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.ReplaceParameter(System.String,System.Data.Common.DbParameter)">
+            <summary>
+            Replaces an existing parameter with the new <see cref="T:System.Data.Common.DbParameter"/> with an existing <see cref="P:System.Data.Common.DbParameter.ParameterName"/>
+            </summary>
+            <param name="parameterName">The index as a <c>string</c> to use when searching for the existing parameter</param>
+            <param name="param">A new instance of <see cref="T:System.Data.Common.DbParameter"/></param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryBuilder.SetParameterValue(System.String,System.Object)">
+            <summary>
+            Sets the value of an existing <see cref="T:System.Data.Common.DbParameter"/> by using the <paramref name="parameterName"/> and passed in <paramref name="value"/>
+            </summary>
+            <param name="parameterName">The name of the parameter to identify the parameter</param>
+            <param name="value">The value of the parameter as an <see cref="T:System.Object"/></param>
+        </member>
+        <member name="T:ADO.Net.Client.Core.QueryFactory">
+            <summary>
+            Factory class for creating instances of <see cref="T:ADO.Net.Client.Core.ISqlQuery"/>
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryFactory.CreateStoredProcedureQuery(System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Create an instance of <see cref="T:ADO.Net.Client.Core.ISqlQuery"/> using the <paramref name="parameters"/> and <paramref name="storedProcedureName"/> for a stored procedure
+            </summary>
+            <param name="parameters">An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/> associated with a query</param>
+            <param name="storedProcedureName">Stored procedure name</param>
+            <param name="shouldBePrepared">Indicates if the current sql string needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryFactory.CreateAdHocQuery(System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Create an instance of <see cref="T:ADO.Net.Client.Core.ISqlQuery"/> using the <paramref name="parameters"/> and built sql query
+            </summary>
+            <param name="parameters">An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/> associated with a query</param>
+            <param name="queryText">The Ad-Hoc query</param>
+            <param name="shouldBePrepared">Indicates if the current sql string needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+        </member>
+        <member name="M:ADO.Net.Client.Core.QueryFactory.CreateSQLQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Int32,System.Boolean)">
+            <summary>
+            Create an instance of <see cref="T:ADO.Net.Client.Core.ISqlQuery"/> using the <paramref name="parameters"/> and built sql query
+            </summary>
+            <param name="parameters">An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/> associated with a query</param>
+            <param name="queryText">The Ad-Hoc query or stored procedure name</param>
+            <param name="shouldBePrepared">Indicates if the current sql string needs to be prepared (or compiled) version of the command on the data source.</param>
+            <param name="commandTimeout">The wait time in seconds before terminating the attempt to execute a command and generating an error</param>
+            <param name="type">Represents how a command should be interpreted by the data provider</param>
+        </member>
+        <member name="T:ADO.Net.Client.Core.SqlQuery">
+            <summary>
+            Transfer object that contains the information about a query to use when querying a datastore
+            </summary>
+            <seealso cref="T:ADO.Net.Client.Core.ISqlQuery"/>
+        </member>
+        <member name="P:ADO.Net.Client.Core.SqlQuery.ShouldBePrepared">
+            <summary>
+            Indicates if the current <see cref="P:ADO.Net.Client.Core.SqlQuery.QueryText"/> needs to be prepared (or compiled) version of the command on the data source.
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.SqlQuery.QueryType">
+            <summary>
+            Represents how a command should be interpreted by the data provider
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.SqlQuery.QueryText">
+            <summary>
+            The query command text or name of stored procedure to execute against the data store
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.SqlQuery.Parameters">
+            <summary>
+            The query database parameters that are associated with a query
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Core.SqlQuery.CommandTimeout">
+            <summary>
+            Gets or sets the wait time in seconds before terminating the attempt to execute a command and generating an error.  Default is 30 seconds
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.SqlQuery.#ctor(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})">
+            <summary>
+            Instantiates an instance with <paramref name="query"/>, <paramref name="type"/>, and <paramref name="parameters"/>
+            </summary>
+            <param name="query">The query command text or name of stored procedure to execute against the data store</param>
+            <param name="type">Represents how a command should be interpreted by the data provider</param>
+            <param name="parameters">The <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Data.Common.DbParameter"/> that are associated with a <paramref name="query"/></param>
+        </member>
+        <member name="T:ADO.Net.Client.Core.Utilities">
+            <summary>
+            Static utility class for assembly
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Core.Utilities.GetEnumValue(System.Object)">
+            <summary>
+            Gets the value of an <see cref="T:System.Enum"/> based on the <see cref="T:System.TypeCode"/>
+            </summary>
+            <param name="value">Value as an instance of <see cref="T:System.Enum"/></param>
+            <exception cref="T:System.ArgumentException">Thrown when the passed in <paramref name="value"/> is not an <see cref="T:System.Enum"/></exception>
+            <returns>Returns the value derived from the <see cref="T:System.Enum"/> <see cref="T:System.TypeCode"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.Utilities.GetTypeCode(System.Object)">
+            <summary>
+            Gets the <see cref="T:System.TypeCode"/> that is represented by the <paramref name="value"/>
+            </summary>
+            <returns>Returns an instance of <see cref="T:System.TypeCode"/> that the <paramref name="value"/> represents</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.Utilities.GetEnumTypeCode(System.Enum)">
+            <summary>
+            Gets the <see cref="T:System.TypeCode"/> that is represented by the <paramref name="value"/>
+            </summary>
+            <param name="value">The value as an instance of <see cref="T:System.Enum"/></param>
+            <returns>Returns an instance of <see cref="T:System.TypeCode"/> that the <paramref name="value"/> represents</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.Utilities.FindProperty(System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo},System.String,System.Boolean)">
+            <summary>
+            Gets an instance of <see cref="T:System.Reflection.PropertyInfo"/> where the <see cref="P:ADO.Net.Client.Annotations.DbField.DatabaseFieldName"/> matches the passed in <paramref name="propertyName"/>
+            or the <see cref="T:System.Reflection.PropertyInfo"/> name matches the <paramref name="propertyName"/>
+            </summary>
+            <param name="matchUnderScores"><c>true</c> if columns named like User_ID should be mapped to property called UserID, <c>false</c> otherwise</param>
+            <param name="properties">An instance of <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <param name="propertyName">The name of a property as a <see cref="T:System.String"/> in the <paramref name="properties"/></param>
+            <returns>Returns an instance of <see cref="T:System.Reflection.PropertyInfo"/>, null if one cannot be found</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.Utilities.GetProperty(System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo},System.String,System.Boolean)">
+            <summary>
+            Gets an instance of <see cref="T:System.Reflection.PropertyInfo"/>
+            </summary>
+            <param name="matchUnderscoreNames"><c>true</c> if columns named like User_ID should be mapped to property called UserID, <c>false</c> otherwise</param>
+            <param name="properties">An instance of <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <param name="propertyName">The name of a property as a <see cref="T:System.String"/> in the <paramref name="properties"/></param>
+            <returns>Returns an instance of <see cref="T:System.Reflection.PropertyInfo"/>, null if one cannot be found</returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.Utilities.GetPropertyInfoByDbField(System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo},System.String,System.Boolean)">
+            <summary>
+            Gets an instance of <see cref="T:System.Reflection.PropertyInfo"/> where the <see cref="P:ADO.Net.Client.Annotations.DbField.DatabaseFieldName"/> matches the passed in <paramref name="propertyName"/>
+            </summary>
+            <param name="matchUnderscores"><c>true</c> if columns named like User_ID should be mapped to property called UserID, <c>false</c> otherwise</param>
+            <param name="propertyName">A property name as a value of <see cref="T:System.String"/></param>
+            <param name="infos">An instance of <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Reflection.PropertyInfo"/></param>
+            <returns>Returns an instance of <see cref="T:System.Reflection.PropertyInfo"/></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.Utilities.IsEnumerable(System.Object)">
+            <summary>
+            Determines whether this instance is an <see cref="T:System.Collections.IEnumerable"/>
+            </summary>
+            <param name="input">The input.</param>
+            <returns>
+              <c>true</c> if the specified input is enumerable; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.Utilities.GetTypeFromValue``1(System.Object)">
+            <summary>
+            Gets an instance of <typeparamref name="T"/> from the <paramref name="value"/>
+            </summary>
+            <typeparam name="T">The desired type to return</typeparam>
+            <param name="value">The value as a <see cref="T:System.Object"/></param>
+            <returns>Returns a value as an instance of <typeparamref name="T" /></returns>
+        </member>
+        <member name="M:ADO.Net.Client.Core.Utilities.IsNullableGenericType(System.Type)">
+            <summary>
+            Checks if the passed in type is a generic type that is nullable
+            </summary>
+            <param name="type">The .NET type to check for nullable</param>
+            <returns>Returns <c>true</c> if the passed in type is nullable, <c>false</c> otherwise</returns>
+        </member>
+    </members>
+</doc>

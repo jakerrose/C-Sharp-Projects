@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ADO.Net.Client.Annotations</name>
+    </assembly>
+    <members>
+        <member name="T:ADO.Net.Client.Annotations.ANSIString">
+            <summary>
+            Signifies if the data type is <see cref="F:System.Data.DbType.AnsiString"/> of varying length
+            </summary>
+            <seealso cref="T:System.Attribute"/>
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.ANSIStringFixedLength">
+            <summary>
+            Signifies if the data type is <see cref="F:System.Data.DbType.AnsiStringFixedLength"/>
+            </summary>
+            <seealso cref="T:System.Attribute"/>
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.AutoIncrement">
+            <summary>
+            Indicates if the property is an auto incremented value field
+            </summary>
+            <seealso cref="T:System.Attribute"/>
+        </member>
+        <member name="M:ADO.Net.Client.Annotations.AutoIncrement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ADO.Net.Client.Annotations.AutoIncrement"/> class.
+            </summary>
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.DateTime2">
+            <summary>
+            Signifies if the data type is <see cref="F:System.Data.DbType.DateTime2"/>
+            </summary>
+            <seealso cref="T:System.Attribute"/>
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.DbField">
+            <summary>
+            Attribute class that defines a field that goes into and comes out of a database
+            </summary>
+            <seealso cref="T:System.Attribute"/>
+        </member>
+        <member name="P:ADO.Net.Client.Annotations.DbField.DefaultValueIfNull">
+            <summary>
+            The default value as a <see cref="T:System.Object"/> in the instance where a value from the database is <see cref="F:System.DBNull.Value"/>
+            </summary>
+        </member>
+        <member name="P:ADO.Net.Client.Annotations.DbField.DatabaseFieldName">
+            <summary>
+            The name of a field that is being pulled from a query
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Annotations.DbField.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of <see cref="T:ADO.Net.Client.Annotations.DbField"/>
+            </summary>
+            <param name="dbFieldName">The name of a field that exists in a database table</param>
+            <param name="valueIfNull">The default value if the field coming from a query has a value of <see cref="F:System.DBNull.Value"/></param>
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.DbFieldIgnore">
+            <summary>
+            Attribute class that defines if a property should be read out of a database query
+            </summary>
+            <seealso cref="T:System.Attribute"/>
+        </member>
+        <member name="M:ADO.Net.Client.Annotations.DbFieldIgnore.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:ADO.Net.Client.Annotations.DbFieldIgnore"/>
+            </summary>
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.ForeignKey">
+            <summary>
+            Indicates if the property is considered to be a foreign key field
+            </summary>
+            <seealso cref="T:System.Attribute"/>
+        </member>
+        <member name="M:ADO.Net.Client.Annotations.ForeignKey.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ADO.Net.Client.Annotations.ForeignKey"/> class.
+            </summary>
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.IgnoreParameter">
+            <summary>
+            Signifies if a property should not be considered a parameter for a database query
+            </summary>
+            <seealso cref="T:System.Attribute"/>
+        </member>
+        <member name="M:ADO.Net.Client.Annotations.IgnoreParameter.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:ADO.Net.Client.Annotations.IgnoreParameter"/>
+            </summary>
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.Input">
+            <summary>
+            Database parameter direction that represents <see cref="F:System.Data.ParameterDirection.Input"/>
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.InputOutput">
+            <summary>
+            Database parameter direction that represents <see cref="F:System.Data.ParameterDirection.InputOutput"/>
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.Output">
+            <summary>
+            Database parameter direction that represents <see cref="F:System.Data.ParameterDirection.Output"/>
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.ParameterName">
+            <summary>
+            Specifies an alternate name of an instance of <see cref="T:System.Reflection.PropertyInfo"/>
+            </summary>
+            <seealso cref="T:System.Attribute"/>
+        </member>
+        <member name="P:ADO.Net.Client.Annotations.ParameterName.Name">
+            <summary>
+            An alternate name of an instance of <see cref="T:System.Reflection.PropertyInfo"/>
+            </summary>
+        </member>
+        <member name="M:ADO.Net.Client.Annotations.ParameterName.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:ADO.Net.Client.Annotations.ParameterName"/>
+            </summary>
+            <param name="name">An alternate name of an instance of <see cref="T:System.Reflection.PropertyInfo"/></param>
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.PrimaryKey">
+            <summary>
+            Indicates if the property is considered to be a primary key field
+            </summary>
+            <seealso cref="T:System.Attribute"/>
+        </member>
+        <member name="M:ADO.Net.Client.Annotations.PrimaryKey.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ADO.Net.Client.Annotations.PrimaryKey"/> class.
+            </summary>
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.ReturnValue">
+            <summary>
+            Database parameter direction that represents <see cref="F:System.Data.ParameterDirection.ReturnValue"/>
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.StringFixedLength">
+            <summary>
+            Signifies if the data type is <see cref="F:System.Data.DbType.StringFixedLength"/>
+            </summary>
+            <seealso cref="T:System.Attribute"/>
+        </member>
+        <member name="T:ADO.Net.Client.Annotations.UniqueKey">
+            <summary>
+            Indicates if the property is considered to be a unique key field
+            </summary>
+            <seealso cref="T:System.Attribute"/>
+        </member>
+        <member name="M:ADO.Net.Client.Annotations.UniqueKey.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ADO.Net.Client.Annotations.UniqueKey"/> class.
+            </summary>
+        </member>
+    </members>
+</doc>

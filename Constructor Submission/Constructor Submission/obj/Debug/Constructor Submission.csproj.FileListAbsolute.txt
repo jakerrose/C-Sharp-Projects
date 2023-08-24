@@ -1,0 +1,2 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Constructor Submission\Constructor Submission\obj\Debug\Constructor Submission.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\Constructor Submission\Constructor Submission\obj\Debug\Constructor Submission.csproj.AssemblyReference.cache

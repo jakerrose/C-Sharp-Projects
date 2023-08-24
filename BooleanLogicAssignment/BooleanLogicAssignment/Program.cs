@@ -26,7 +26,7 @@ namespace BooleanLogicAssignment
 
             //checks if age is over or equal to 15, if user has 3 or less tickets, if they have no DUI. If all are true, they are qualified.
             Console.WriteLine("Are you qualified for car insurance?");
-            bool qualified = (userAge >= 15 && userTickets <= 3 && result==false);
+            bool qualified = (userAge > 15 && userTickets <= 3 && result==false);
             Console.WriteLine(qualified);
             Console.ReadLine();
         }
