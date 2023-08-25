@@ -218,9 +218,7 @@
     <Content Include="Views\Insuree\Index.cshtml" />
     <Content Include="Views\Insuree\Admin.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

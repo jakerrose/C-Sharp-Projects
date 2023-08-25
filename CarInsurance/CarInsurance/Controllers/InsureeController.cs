@@ -55,11 +55,13 @@ namespace CarInsurance.Controllers
         {
             if (ModelState.IsValid)
             {
+                //begin quote with amount of $50
                 decimal quote = 50.00m;
+                //calculates age based on date of birth
+                TimeSpan lifeYears = DateTime.Now - insuree.DateOfBirth;
+                var age = lifeYears.TotalDays / 365.2422;
 
-                TimeSpan lifeSpan = DateTime.Now - insuree.DateOfBirth;
-                var age = lifeSpan.TotalDays / 365.2422;
-
+                //calculations to quote based on age
                 if(age<=18)
                 {
                     quote += 100;
@@ -73,10 +75,12 @@ namespace CarInsurance.Controllers
                     quote += 50;
                 }
 
+                //calculations to quote based on year of car
                 if (insuree.CarYear <2000 || insuree.CarYear > 2015)
                 {
                     quote += 25;
                 }
+                //calculations based on type of car
                 if (insuree.CarMake == "Porsche" && insuree.CarModel == "911 Carrera")
                 {
                     quote += 50;
@@ -86,6 +90,7 @@ namespace CarInsurance.Controllers
                     quote += 25;
                 }
 
+                //calculations based on speeding tickets and DUI
                 if (insuree.SpeedingTickets > 0)
                 {
                     quote += (10 * insuree.SpeedingTickets);
