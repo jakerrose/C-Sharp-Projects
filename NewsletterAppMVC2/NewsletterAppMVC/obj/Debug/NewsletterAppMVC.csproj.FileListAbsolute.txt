@@ -1,0 +1,3 @@
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\NewsletterAppMVC\NewsletterAppMVC\obj\Debug\NewsletterAppMVC.csproj.CoreCompileInputs.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\NewsletterAppMVC2\NewsletterAppMVC\obj\Debug\NewsletterAppMVC.csproj.AssemblyReference.cache
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\NewsletterAppMVC2\NewsletterAppMVC\obj\Debug\NewsletterAppMVC.csproj.CoreCompileInputs.cache

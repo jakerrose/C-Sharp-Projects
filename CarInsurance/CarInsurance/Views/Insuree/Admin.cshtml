@@ -1,0 +1,36 @@
+﻿@using CarInsurance.ViewModels
+@model List<AdminVM>
+
+<div class="row-no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="m-0">Admin</h5>
+        </div>
+        <div class="card-body">
+            @foreach (var insuree in Model)
+            {
+                using(Html.BeginForm("Cancel", "Admin", FormMethod.Post))
+                {
+                    <input type="hidden" name="Id" value ="@insuree.Id" />
+                    <div class="row mb-3">
+                        <div class="col">
+                            @insuree.Quote.ToString("#.##")
+                            </div>
+                        <div class="col">
+                            @insuree.FirstName
+                            </div>
+                        <div class="col">
+                            @insuree.LastName
+                            </div>
+                        <div class="col">
+                            @insuree.EmailAddress
+                            </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-danger btn-block">Cancel quote</button>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
