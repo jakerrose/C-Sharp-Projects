@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/Nhi9KwL/SaMEvDqodQgoBbhptDXI79h6LwBS3ElYHDDvPOLrCLb6mjmVZkE3at5uIREY5/DNg35C4BwWnhtZw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rosej\\OneDrive\\Documents\\GitHub\\C-Sharp-Projects\\Scores\\Scores\\Scores.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rosej\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.23\\microsoft.netcore.app.host.win-x64.3.1.23.nupkg.sha512"
+  ],
+  "logs": []
+}

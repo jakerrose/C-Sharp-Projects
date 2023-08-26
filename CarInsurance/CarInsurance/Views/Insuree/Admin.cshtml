@@ -1,36 +1,52 @@
-﻿@using CarInsurance.ViewModels
-@model List<AdminVM>
+﻿@model IEnumerable<CarInsurance.Models.Insuree>
 
-<div class="row-no-gutters m-3">
-    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
-        <div class="card-header text-center">
-            <h5 class="m-0">Admin</h5>
-        </div>
-        <div class="card-body">
-            @foreach (var insuree in Model)
-            {
-                using(Html.BeginForm("Cancel", "Admin", FormMethod.Post))
-                {
-                    <input type="hidden" name="Id" value ="@insuree.Id" />
-                    <div class="row mb-3">
-                        <div class="col">
-                            @insuree.Quote.ToString("#.##")
-                            </div>
-                        <div class="col">
-                            @insuree.FirstName
-                            </div>
-                        <div class="col">
-                            @insuree.LastName
-                            </div>
-                        <div class="col">
-                            @insuree.EmailAddress
-                            </div>
-                        <div class="col">
-                            <button type="submit" class="btn btn-danger btn-block">Cancel quote</button>
-                        </div>
-                    </div>
-                }
-            }
-        </div>
-    </div>
-</div>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quote)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quote)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -37,7 +37,7 @@ namespace CarInsurance.Controllers
 
         public ActionResult Admin()
         {
-            return View();
+            return View(db.Insurees.ToList());
         }
 
         // GET: Insuree/Create
