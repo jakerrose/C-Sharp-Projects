@@ -12,10 +12,6 @@ namespace Black_Jack
     {
         static void Main(string[] args)
         {
-            //string text = "Here is some text";
-            //File.WriteAllText(@"C:\Users\rosej\Log.txt", text);
-            //var newPlayer = new Player("Jake");
-
             //declare constant
             const string casinoName = "Grand Hotel and Casino";
 
@@ -74,7 +70,7 @@ namespace Black_Jack
                     }
                     catch(Exception ex)
                     {
-                        Console.WriteLine("An error occured. Please contact your system admiinistrator.");
+                        Console.WriteLine("An error occured. Please contact your system administrator.");
                         UpdateDbWithException(ex);
                         Console.ReadLine();
                             return;
@@ -88,7 +84,7 @@ namespace Black_Jack
         }
         private static void UpdateDbWithException(Exception ex)
         {
-            //remove quotes?
+            
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog='TwentyOne Game';
                                         Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;
                                         ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
