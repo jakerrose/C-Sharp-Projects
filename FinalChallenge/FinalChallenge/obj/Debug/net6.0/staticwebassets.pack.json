@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\rosej\\OneDrive\\Documents\\GitHub\\C-Sharp-Projects\\FinalChallenge\\FinalChallenge\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FinalChallenge.bundle.scp.css",
-      "PackagePath": "staticwebassets\\FinalChallenge.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\rosej\\OneDrive\\Documents\\GitHub\\C-Sharp-Projects\\FinalChallenge\\FinalChallenge\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

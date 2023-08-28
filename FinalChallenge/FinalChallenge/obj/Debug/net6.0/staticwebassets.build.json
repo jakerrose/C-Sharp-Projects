@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UGxeDIVRXjPp1HnhGuAYWCjqkVWbGlLQdWZBuhhPQ0Y=",
+  "Hash": "ICMcof456yernqmykxVX1dK2lDat+uVZdBdgJlkdOsk=",
   "Source": "FinalChallenge",
   "BasePath": "_content/FinalChallenge",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\rosej\\OneDrive\\Documents\\GitHub\\C-Sharp-Projects\\FinalChallenge\\FinalChallenge\\obj\\Debug\\net6.0\\scopedcss\\bundle\\FinalChallenge.styles.css",
-      "SourceId": "FinalChallenge",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\rosej\\OneDrive\\Documents\\GitHub\\C-Sharp-Projects\\FinalChallenge\\FinalChallenge\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/FinalChallenge",
-      "RelativePath": "FinalChallenge.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\rosej\\OneDrive\\Documents\\GitHub\\C-Sharp-Projects\\FinalChallenge\\FinalChallenge\\obj\\Debug\\net6.0\\scopedcss\\bundle\\FinalChallenge.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\rosej\\OneDrive\\Documents\\GitHub\\C-Sharp-Projects\\FinalChallenge\\FinalChallenge\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FinalChallenge.bundle.scp.css",
-      "SourceId": "FinalChallenge",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\rosej\\OneDrive\\Documents\\GitHub\\C-Sharp-Projects\\FinalChallenge\\FinalChallenge\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/FinalChallenge",
-      "RelativePath": "FinalChallenge.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\rosej\\OneDrive\\Documents\\GitHub\\C-Sharp-Projects\\FinalChallenge\\FinalChallenge\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FinalChallenge.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\rosej\\OneDrive\\Documents\\GitHub\\C-Sharp-Projects\\FinalChallenge\\FinalChallenge\\wwwroot\\css\\site.css",
       "SourceId": "FinalChallenge",
