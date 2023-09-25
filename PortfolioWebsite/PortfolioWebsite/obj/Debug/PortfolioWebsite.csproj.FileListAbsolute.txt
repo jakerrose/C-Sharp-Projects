@@ -72,8 +72,8 @@ C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\PortfolioWebsite\Portf
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\PortfolioWebsite\PortfolioWebsite\bin\Newtonsoft.Json.xml
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\PortfolioWebsite\PortfolioWebsite\bin\Antlr3.Runtime.pdb
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\PortfolioWebsite\PortfolioWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\PortfolioWebsite\PortfolioWebsite\obj\Debug\PortfolioWebsite.csproj.AssemblyReference.cache
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\PortfolioWebsite\PortfolioWebsite\obj\Debug\PortfolioWebsite.csproj.CoreCompileInputs.cache
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\PortfolioWebsite\PortfolioWebsite\obj\Debug\PortfolioWebsite.csproj.CopyComplete
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\PortfolioWebsite\PortfolioWebsite\obj\Debug\PortfolioWebsite.dll
 C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\PortfolioWebsite\PortfolioWebsite\obj\Debug\PortfolioWebsite.pdb
+C:\Users\rosej\OneDrive\Documents\GitHub\C-Sharp-Projects\PortfolioWebsite\PortfolioWebsite\obj\Debug\PortfolioWebsite.csproj.AssemblyReference.cache

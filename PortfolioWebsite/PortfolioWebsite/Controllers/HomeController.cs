@@ -15,7 +15,15 @@ namespace PortfolioWebsite.Controllers
 
         public ActionResult Portfolio()
         {
+            return View();
+        }
+        public ActionResult CsharpLiveProject()
+        {
+            return View();
+        }
 
+        public ActionResult CarInsurance()
+        {
             return View();
         }
     }

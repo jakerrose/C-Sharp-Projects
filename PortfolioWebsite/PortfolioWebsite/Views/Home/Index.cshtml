@@ -1,108 +1,175 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+﻿
 <head>
     <title>Jake Rose Software Development Portfolio</title>
-    <link rel="stylesheet" href="~/Content/Portfolio.css">
+    
 </head>
+    <body>
 
+<div id="home">
 
-    <div id="home">
-      
-    </div>
+</div>
 
-    <!-------Video Text-->
-    <div class="Video_Text">
-        <h1 class="white-text">Jake Rose's Portfolio</h1>
-        <strong>
-            <p class="center">
-                <q>Programmer: A machine that turns coffee into code</q>
-                <br>-Anonymous
-                <br>
-                <br>My name is Jake Rose, welcome to my portfolio webpage. Here I will tell you about myself and my experience.
-            </p>
-        </strong>
-    </div>
-
-    <!------About section-->
-    <div class="Row" id="about">
-        <!---Left column-->
-        <div class="Column_2">
-            <img src="~/Content/images/HeadShot.jpg" alt="">
-        </div>
-        <!----Right Column-->
-        <div class="Column_1">
-            <h1>About</h1>
-            <p>
-                I am a full-stack software developer and web designer trained in C#, .Net, Html, CSS, JS and many other languages.
-                <br>
-                I am a graduate of <a href="https://learncodinganywhere.com">The Tech Academy's</a> C# and .Net Bootcamp.
-                <br>
-                <br>I am based in Portland, Oregon but am more than comfortable working remotely.
-                <br>
-                <br>Please <a href="#contact">contact</a> me about your project!
-            </p>
-        </div>
-    </div>
-    <br>
-    <br>
-
-    <!----Github Section-->
-    <div class="Row" id="github">
-        <!---Left Column-->
-        <div class="Column_2">
-            <img src="~/Content/images/github-logo.jpg" alt="">
-        </div>
-        <!---Right Column-->
-        <div class="Column_1">
-            <h1>Github</h1>
-            <p>
-                View all my coding projects on my Github profile:
-                <br>
-                <br>
-            <p class="center"><a href="https://github.com/omniboss?tab=repositories">Github profile</a></p>
-            </p>
-        </div>
-    </div>
-    <br>
-    <br>
-    <!-----Contact section-->
-    <div class="Row" id="contact">
-        <!--Contact image left column-->
-        <div class="Column_2 Column_tall">
-            <img src="./images/keyboard.jpg" alt="">
-        </div>
-        <!---Right column contact-->
-        <div class="Column_1 Column_tall">
-            <h1>Contact</h1>
-            <form action="https://formspree.io/f/mnqyreql" method="post">
-                <div class="col-auto">
-                <label>Name</label>
-                <br />
-                <input type="text" name="Name" placeholder="Please Enter Your Name Here">
-                <br />
-                <label>Email</label>
-                <br />
-                <input type="text" name="Email" placeholder="Please Enter Your Email Here">
-                <br />
-                <div class="form-group col-auto">
-                    <label for="exampleFormControlTextarea1">Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Type your message here"></textarea>
-                </div>
-                <input type="submit" value="Submit">
-                </div>
-            </form>
-           
-            </div>
-        </div>
-
-    <!---Footer section-->
-    <footer>
-        <p>
-        <p class="center">&copy Jake Rose 2023</p>
+<!-------Video Text-->
+<div class="Video_Text">
+    <h1 class="white-text">Jake Rose's Portfolio</h1>
+    <strong>
+        <p class="center">
+            <q>Programmer: A machine that turns coffee into code</q>
+            <br>-Anonymous
+            <br>
+            <br>My name is Jake Rose, welcome to my portfolio webpage. Here I will tell you about myself and my experience.
         </p>
-    </footer>
+    </strong>
+</div>
+
+<!--Slideshow-->
+<!--Slideshow-->
+
+<div id="Slideshow">
+    <div id="Slideshow_Background">
+        <div id="Slideshow_Container">
+
+            <!--Slide 1-->
+            <div class="mySlides fades">
+                <img class="Slideshow_Images" src="~/Content/images/HeadShot.jpg" alt="Jake Rose">
+                <div class="text">Hello! I'm available to assist on your project!</div>
+            </div>
+            <!--previous and next buttons-->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <!--Slide 2-->
+            <div class="mySlides fades">
+                <img class="Slideshow_Images" src="~/Content/images/HTML_CSS_and_JavaScript.jpeg" alt="HTML CSS and JS">
+                <div class="text">
+                    I am a full-stack software developer<br>
+                    trained in: <br> HTML, CSS, and JavaScript
+                </div>
+            </div>
+            <!--previous and next buttons-->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <!--Slide 3-->
+            <div class="mySlides fades">
+                <img class="Slideshow_Images" src="~/Content/images/Python.png" alt="Python">
+                <div class="text">I'm also trained in the popular programming language Python.</div>
+            </div>
+            <!--previous and next buttons-->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <!--Slide 4-->
+            <div class="mySlides fades">
+                <img class="Slideshow_Images" src="~/Content/images/C_Sharp_and_Dot_NET.png" alt="C# and .Net">
+                <div class="text">My specialty is C# and .NET Framework.</div>
+            </div>
+            <!--previous and next buttons-->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <!--Slide 5-->
+            <div class="mySlides fades">
+                <img class="Slideshow_Images" src="~/Content/images/SQL_and_Database.jpg" alt="SQL">
+                <div class="text">I'm also familiar with back end development, databases, and SQL.</div>
+            </div>
+            <!--previous and next buttons-->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <!--Slide 6-->
+            <div class="mySlides fades">
+                <img class="Slideshow_Images" src="~/Content/images/keyboard.jpg" alt="keyboard">
+                <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                <br>
+
+            </div>
+            <!--previous and next buttons-->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <!--slideshow dots-->
+        <div style="text-align: center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+    </div>
+
+<br>
+<br>
+
+<!------About section-->
+<div class="Row" id="about">
+    <!---Left column-->
+    <div class="Column_2">
+        <img src="~/Content/images/code.jpg" alt="code">
+    </div>
+    <!----Right Column-->
+    <div class="Column_1">
+        <h1>About</h1>
+        <p>
+            I am a full-stack software developer and web designer trained in C#, .Net, SQL, Html, CSS, JS, and other technologies and languages.
+            <br>
+            I am a graduate of <a href="https://learncodinganywhere.com">The Tech Academy's</a> <a href="https://www.learncodinganywhere.com/csharpanddotnetbootcampcontact">C# and .Net Bootcamp </a>.
+            <br>
+            <br>I am based in Portland, Oregon and am comfortable working remotely.
+            <br>
+            <br>Please <a onclick="openForm()" class="contact">contact</a> me about your project!
+        </p>
+    </div>
+</div>
+<br>
+<br>
+
+<!----Github Section-->
+<div class="Row" id="github">
+    <!---Left Column-->
+    <div class="Column_2">
+        <img src="~/Content/images/github-logo.jpg"alt="">
+    </div>
+    <!---Right Column-->
+    <div class="Column_1">
+        <h1>Github</h1>
+        <p class="centertext">
+            View all my coding projects on my Github profile:
+            <br>
+        </p>
+        <br>
+        <p class="center"><a href="https://github.com/omniboss?tab=repositories">Github Profile</a></p>
+        </p>
+        <br>
+        <br>
+        <p class="centertext">
+            Follow me on LinkedIn:
+            <br>
+        </p>
+        <p class="center"><a href="https://www.linkedin.com/in/jake-rose-4346b140/">LinkedIn Profile</a></p>
+    </div>
+</div>
+<br>
+<br>
+<!-----Contact section-->
+<div id="contact">
+    <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+    <div class="form-popup" id="myForm">
+        <h1>Contact</h1>
+        <form action="https://formspree.io/f/mnqyreql" method="post" class="form-container">
+            <label for="name"><b>Name</b></label>
+            <input type="text" name="Name" placeholder="Please Enter Your Name Here" required>
+            <label for="email"><b>Email</b></label>
+            <input type="text" name="Email" placeholder="Please Enter Your Email Here" required>
+            <label for="message"><b>Message</b></label>
+            <input type="text" name="Message" id="message" placeholder="Please Type Your Message Here" required>
+
+            <button type="submit" class="btn">SUBMIT</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+        </form>
+    </div>
+</div>
 
 </body>
-</html>

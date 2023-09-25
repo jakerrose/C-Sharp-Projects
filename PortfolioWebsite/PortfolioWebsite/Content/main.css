@@ -1,4 +1,4 @@
-/*----Body----*/
+﻿/*----Body----*/
 body {
     margin: 0%;
     opacity: 1;
@@ -6,12 +6,24 @@ body {
     letter-spacing: .2vw;
     overflow-x: hidden;
     user-select: none;
-    ;
 }
 
     body.fade-out {
         opacity: .1;
     }
+
+.Bar {
+    overflow: hidden;
+    background-color: lightgreen;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    padding-left: 5%;
+}
+
+footer {
+    color: antiquewhite;
+}
 /*affects whole dodcument*/
 html {
     scroll-behavior: smooth; /*ensures smooth scrolling*/
@@ -25,8 +37,21 @@ h1 {
     color: black;
 }
 
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin-top: 3%;
+    color: white;
+}
+
+h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
 .white-text {
     color: bisque;
+    text-align: center;
 }
 /*----------Paragraph elements-------*/
 p {
@@ -63,6 +88,12 @@ img {
     margin-right: auto;
     filter: grayscale(5%);
     opacity: .85;
+}
+
+.imgContainer {
+    position: absolute;
+    width: 400px;
+    height: auto;
 }
 
 /* anchor elements */
@@ -197,6 +228,23 @@ a {
     display: block;
 }
 
+.section {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+.Column_3 {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1%;
+    height: 400px;
+    background-color: lightgreen;
+    opacity: .99;
+    display: block;
+}
+
 Column_tall {
     padding-top: 4%;
     height: 450px;
@@ -321,6 +369,7 @@ button {
         -webkit-transition-duration: 1s;
         border-color: black;
     }
+
 /* slideshow styling*/
 #Slideshow_Background {
     background: rgba(255, 255, 255, .35);
@@ -338,6 +387,15 @@ button {
     margin: auto;
 }
 
+#Slideshow_Container2 {
+    width: auto;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+
     #Slideshow_Container a {
         text-decoration: none;
     }
@@ -345,6 +403,14 @@ button {
 .Slideshow_Images {
     vertical-align: middle;
     height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+    width: 100%;
+}
+
+.Slideshow_Images2 {
+    vertical-align: middle;
+    height: 700px;
+    width: 100%;
     box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
     width: 100%;
 }
@@ -408,7 +474,7 @@ button {
         background-color: black;
     }
 /* fading animation for slideshow*/
-.fade {
+.fades {
     animation-name: fade;
     animation-duration: 1.5s;
     -webkit-animation-name: fade;
@@ -433,4 +499,21 @@ button {
     to {
         opacity: 1;
     }
+}
+
+/*-------Styles for Portfolio------*/
+
+.portContainer {
+    width: 100%;
+    background-color:antiquewhite;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.pText {
+    color: black;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:medium
+
 }

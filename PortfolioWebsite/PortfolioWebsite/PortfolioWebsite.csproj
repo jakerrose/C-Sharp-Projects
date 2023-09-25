@@ -140,6 +140,8 @@
     <Content Include="Content\images\hello_world.mp4" />
     <Content Include="Content\images\keyboard.jpg" />
     <Content Include="Content\images\mail.jpg" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\main.js" />
     <Content Include="Content\Portfolio.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -171,6 +173,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
+    <Content Include="Views\Home\CsharpLiveProject.cshtml" />
+    <Content Include="Views\Home\CarInsurance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
